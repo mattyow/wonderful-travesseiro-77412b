@@ -54,10 +54,18 @@ async function fetchAllRecords(): Promise<AirtableRecord[]> {
   return records;
 }
 
+function sanitizeIsbn(value: string): string {
+  return (value ?? '')
+    .trim()
+    .replace(/^=/, '')
+    .replace(/^["'\u201C\u2018]+|["'\u201D\u2019]+$/g, '')
+    .replace(/[^0-9Xx]/g, '');
+}
+
 function coverUrl(isbn13: string, isbn: string): string | null {
-  const id = isbn13?.trim() || isbn?.trim();
+  const id = sanitizeIsbn(isbn13) || sanitizeIsbn(isbn);
   if (!id) return null;
-  return `https://covers.openlibrary.org/b/isbn/${id}-L.jpg`;
+  return `https://covers.openlibrary.org/b/isbn/${id}-L.jpg?default=false`;
 }
 
 export async function getBooks(): Promise<{ books: Book[]; hasTags: boolean }> {
