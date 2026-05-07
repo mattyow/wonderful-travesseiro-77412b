@@ -5,10 +5,6 @@ interface Props {
   book: Book;
 }
 const { book } = Astro.props;
-
-const cdnCover = book.coverUrl
-  ? `/.netlify/images?url=${encodeURIComponent(book.coverUrl)}&w=240&h=360&fit=cover&q=80`
-  : null;
 ---
 
 <article
@@ -25,9 +21,9 @@ const cdnCover = book.coverUrl
   data-cover-url={book.coverUrl ?? ''}
 >
   <div class="cover-wrap">
-    {cdnCover ? (
+    {book.coverUrl ? (
       <img
-        src={cdnCover}
+        src={book.coverUrl}
         alt={book.title}
         width="240"
         height="360"
@@ -36,7 +32,7 @@ const cdnCover = book.coverUrl
         onerror="this.hidden=true;this.nextElementSibling.hidden=false"
       />
     ) : null}
-    <div class="placeholder" hidden={!!cdnCover}>
+    <div class="placeholder" hidden={!!book.coverUrl}>
       <span class="ph-title">{book.title}</span>
       <span class="ph-author">{book.author}</span>
     </div>

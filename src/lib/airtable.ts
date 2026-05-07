@@ -54,8 +54,20 @@ async function fetchAllRecords(): Promise<AirtableRecord[]> {
   return records;
 }
 
+function sanitizeIsbn(raw: string | undefined): string {
+  if (!raw) return '';
+  let s = raw.trim();
+  // Strip Excel/CSV formula prefix: ="..."
+  if (s.startsWith('=')) s = s.slice(1);
+  // Strip wrapping straight or smart quotes
+  s = s.replace(/^["'“‘]|["'”’]$/g, '');
+  // Remove anything that isn't a digit or X
+  s = s.replace(/[^0-9Xx]/g, '');
+  return s;
+}
+
 function coverUrl(isbn13: string, isbn: string): string | null {
-  const id = isbn13?.trim() || isbn?.trim();
+  const id = sanitizeIsbn(isbn13) || sanitizeIsbn(isbn);
   if (!id) return null;
   return `https://covers.openlibrary.org/b/isbn/${id}-L.jpg`;
 }
