@@ -54,8 +54,21 @@ async function fetchAllRecords(): Promise<AirtableRecord[]> {
   return records;
 }
 
+function sanitizeIsbn(raw: string): string {
+  let s = raw.trim();
+  // Strip leading = (Excel/CSV formula prefix Airtable sometimes exports)
+  if (s.startsWith('=')) s = s.slice(1);
+  // Strip wrapping straight quotes, curly/smart quotes (" " ' ')
+  s = s.replace(/^["“‘']+|["”’']+$/g, '');
+  // Remove anything that isn't a digit or the letter X (valid ISBN-10 checksum char)
+  s = s.replace(/[^0-9X]/gi, '');
+  return s;
+}
+
 function coverUrl(isbn13: string, isbn: string): string | null {
-  const id = isbn13?.trim() || isbn?.trim();
+  const cleanIsbn13 = sanitizeIsbn(isbn13 ?? '');
+  const cleanIsbn = sanitizeIsbn(isbn ?? '');
+  const id = cleanIsbn13 || cleanIsbn;
   if (!id) return null;
   return `https://covers.openlibrary.org/b/isbn/${id}-L.jpg`;
 }

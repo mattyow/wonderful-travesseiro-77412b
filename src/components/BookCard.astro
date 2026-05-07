@@ -6,9 +6,7 @@ interface Props {
 }
 const { book } = Astro.props;
 
-const cdnCover = book.coverUrl
-  ? `/.netlify/images?url=${encodeURIComponent(book.coverUrl)}&w=240&h=360&fit=cover&q=80`
-  : null;
+const cdnCover = book.coverUrl ?? null;
 ---
 
 <article

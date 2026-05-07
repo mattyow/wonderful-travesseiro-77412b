@@ -115,7 +115,7 @@ const allTags = hasTags
 
     if (img && placeholder) {
       if (coverUrl) {
-        img.src = `/.netlify/images?url=${encodeURIComponent(coverUrl)}&w=300&q=85`;
+        img.src = coverUrl;
         img.alt = title;
         img.hidden = false;
         placeholder.hidden = true;
