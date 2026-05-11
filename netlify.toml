@@ -1,6 +1,0 @@
-[build]
-  publish = "dist"
-  command = "npm run build"
-
-[images]
-remote_images = ["https://covers\\.openlibrary\\.org/.*"]
