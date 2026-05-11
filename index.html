@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Books — Matt Yow's personal library</title>
+  <style>
+    /* ---------- Custom fonts ---------- */
+    @font-face {
+      font-family: "Auroc Text";
+      src: url("fonts/AurocText-Italic.woff") format("woff");
+      font-style: italic;
+      font-weight: 400;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Phantom Sans";
+      src: url("fonts/PhantomSans-Book.woff") format("woff");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Umiak Mono";
+      src: url("fonts/Umiak-MonoNormal.otf") format("opentype");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --bg: #fafaf7;
+      --text: #1a1a1a;
+      --muted: #777;
+      --card: #e8e6e0;
+      --border: #ececec;
+
+      --font-display: "Auroc Text", Georgia, serif;
+      --font-sans: "Phantom Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-mono: "Umiak Mono", ui-monospace, "SF Mono", Menlo, monospace;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    header {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem 2rem;
+    }
+    h1 {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 400;
+      font-style: italic;
+      margin: 0 0 0.25rem;
+      letter-spacing: -0.01em;
+    }
+    .tagline {
+      color: var(--muted);
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 2rem 1.5rem;
+    }
+
+    .card {
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+      text-align: left;
+      font: inherit;
+      color: inherit;
+      width: 100%;
+    }
+
+    .cover-wrap {
+      position: relative;
+      aspect-ratio: 2 / 3;
+      background: var(--card);
+      border-radius: 3px;
+      overflow: hidden;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+    .card:hover .cover-wrap,
+    .card:focus-visible .cover-wrap {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    }
+    .cover-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      gap: 0.5rem;
+      text-align: center;
+    }
+    .placeholder .ph-title {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.3;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .placeholder .ph-author {
+      font-size: 0.7rem;
+      color: #888;
+    }
+
+    .meta {
+      margin-top: 0.65rem;
+    }
+    .book-title {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 0.95rem;
+      font-weight: 400;
+      margin: 0;
+      line-height: 1.3;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .book-author {
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin: 0.2rem 0 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* ---------- Modal ---------- */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(20, 20, 20, 0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      z-index: 100;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.15s ease;
+    }
+    .modal-backdrop.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .modal {
+      background: var(--bg);
+      max-width: 560px;
+      width: 100%;
+      padding: 2.5rem;
+      border-radius: 6px;
+      position: relative;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+    .modal-close {
+      position: absolute;
+      top: 0.75rem;
+      right: 1rem;
+      background: none;
+      border: none;
+      font-size: 1.75rem;
+      line-height: 1;
+      cursor: pointer;
+      color: var(--muted);
+      padding: 0.25rem 0.5rem;
+    }
+    .modal-close:hover { color: var(--text); }
+    .modal-cover {
+      width: 160px;
+      aspect-ratio: 2/3;
+      object-fit: cover;
+      border-radius: 4px;
+      margin-bottom: 1.5rem;
+      background: var(--card);
+      display: block;
+    }
+    .modal h2 {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 1.65rem;
+      margin: 0 0 0.25rem;
+      line-height: 1.25;
+    }
+    .modal .modal-author {
+      color: var(--muted);
+      margin: 0 0 1.25rem;
+      font-size: 0.95rem;
+    }
+    .modal-field {
+      margin-top: 1rem;
+    }
+    .modal-field-label {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.4rem;
+    }
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+    .pill {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      padding: 0.25rem 0.6rem;
+      background: var(--card);
+      border-radius: 999px;
+      color: var(--text);
+    }
+    .modal-field-value {
+      font-size: 0.85rem;
+      color: var(--text);
+    }
+    /* ISBN specifically: mono */
+    #modal-isbn {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Books</h1>
+    <p class="tagline">Matt Yow's personal library</p>
+  </header>
+
+  <main>
+    <div id="grid" class="grid"></div>
+  </main>
+
+  <div id="modal-backdrop" class="modal-backdrop" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" aria-label="Close">&times;</button>
+      <img id="modal-cover" class="modal-cover" alt="" />
+      <h2 id="modal-title"></h2>
+      <p id="modal-author" class="modal-author"></p>
+
+      <div id="modal-additional-authors-wrap" class="modal-field" hidden>
+        <div class="modal-field-label">Additional Authors</div>
+        <div id="modal-additional-authors" class="modal-field-value"></div>
+      </div>
+
+      <div id="modal-genres-wrap" class="modal-field" hidden>
+        <div class="modal-field-label">Genres</div>
+        <div id="modal-genres" class="pill-list"></div>
+      </div>
+
+      <div id="modal-themes-wrap" class="modal-field" hidden>
+        <div class="modal-field-label">Themes</div>
+        <div id="modal-themes" class="pill-list"></div>
+      </div>
+
+      <div id="modal-motifs-wrap" class="modal-field" hidden>
+        <div class="modal-field-label">Motifs</div>
+        <div id="modal-motifs" class="pill-list"></div>
+      </div>
+
+      <div id="modal-isbn-wrap" class="modal-field" hidden>
+        <div class="modal-field-label">ISBN</div>
+        <div id="modal-isbn" class="modal-field-value"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ----------------------------------------------------------------
+    // BOOK DATA — edit this array to add/remove books.
+    // Required: title, author, isbn (use ISBN-13, no quotes/equals signs)
+    // Optional: additionalAuthors, genres, themes, motifs
+    // ----------------------------------------------------------------
+    const BOOKS = [
+      {
+        title: "The God of the Woods",
+        author: "Liz Moore",
+        isbn: "9780593418918",
+        genres: ["Literary Fiction", "Mystery"],
+        themes: ["family secrets", "class divide", "memory"],
+        motifs: ["the woods", "missing children", "summer camp"]
+      },
+      {
+        title: "Piranesi",
+        author: "Susanna Clarke",
+        isbn: "9781635577808",
+        genres: ["Fantasy", "Literary Fiction"],
+        themes: ["isolation", "identity", "knowledge"],
+        motifs: ["labyrinth", "statues", "tides"]
+      },
+      {
+        title: "The Road",
+        author: "Cormac McCarthy",
+        isbn: "9780307387899",
+        genres: ["Post-apocalyptic", "Literary Fiction"],
+        themes: ["love", "survival", "faith"],
+        motifs: ["ash", "fire", "the journey"]
+      },
+      {
+        title: "Stoner",
+        author: "John Williams",
+        isbn: "9781590171998",
+        genres: ["Literary Fiction"],
+        themes: ["unfulfilled life", "academia", "endurance"],
+        motifs: ["books", "marriage", "solitude"]
+      },
+      {
+        title: "Annihilation",
+        author: "Jeff VanderMeer",
+        isbn: "9780374104092",
+        genres: ["Weird Fiction", "Eco-horror"],
+        themes: ["the unknowable", "transformation", "self-erasure"],
+        motifs: ["the lighthouse", "spores", "the tower"]
+      }
+    ];
+
+    // ----------------------------------------------------------------
+    // Rendering
+    // ----------------------------------------------------------------
+    const grid = document.getElementById("grid");
+    const backdrop = document.getElementById("modal-backdrop");
+    const modalCover = document.getElementById("modal-cover");
+    const modalTitle = document.getElementById("modal-title");
+    const modalAuthor = document.getElementById("modal-author");
+    const modalAdditionalAuthorsWrap = document.getElementById("modal-additional-authors-wrap");
+    const modalAdditionalAuthors = document.getElementById("modal-additional-authors");
+    const modalGenresWrap = document.getElementById("modal-genres-wrap");
+    const modalGenres = document.getElementById("modal-genres");
+    const modalThemesWrap = document.getElementById("modal-themes-wrap");
+    const modalThemes = document.getElementById("modal-themes");
+    const modalMotifsWrap = document.getElementById("modal-motifs-wrap");
+    const modalMotifs = document.getElementById("modal-motifs");
+    const modalIsbnWrap = document.getElementById("modal-isbn-wrap");
+    const modalIsbn = document.getElementById("modal-isbn");
+
+    function coverUrl(isbn) {
+      if (!isbn) return null;
+      return `https://covers.openlibrary.org/b/isbn/${isbn}-L.jpg`;
+    }
+
+    function renderCard(book) {
+      const card = document.createElement("button");
+      card.className = "card";
+      card.type = "button";
+
+      const wrap = document.createElement("div");
+      wrap.className = "cover-wrap";
+
+      const url = coverUrl(book.isbn);
+      const placeholder = document.createElement("div");
+      placeholder.className = "placeholder";
+      placeholder.innerHTML = `
+        <span class="ph-title">${book.title}</span>
+        <span class="ph-author">${book.author}</span>
+      `;
+
+      if (url) {
+        // Placeholder sits behind the image as fallback
+        wrap.appendChild(placeholder);
+        const img = document.createElement("img");
+        img.src = url;
+        img.alt = book.title;
+        img.loading = "lazy";
+        img.decoding = "async";
+        img.style.position = "absolute";
+        img.style.inset = "0";
+        img.onerror = () => { img.remove(); };
+        wrap.appendChild(img);
+      } else {
+        wrap.appendChild(placeholder);
+      }
+
+      const meta = document.createElement("div");
+      meta.className = "meta";
+      meta.innerHTML = `
+        <p class="book-title">${book.title}</p>
+        <p class="book-author">${book.author}</p>
+      `;
+
+      card.appendChild(wrap);
+      card.appendChild(meta);
+      card.addEventListener("click", () => openModal(book));
+      return card;
+    }
+
+    function renderPills(container, items) {
+      container.innerHTML = "";
+      items.forEach((label) => {
+        const pill = document.createElement("span");
+        pill.className = "pill";
+        pill.textContent = label;
+        container.appendChild(pill);
+      });
+    }
+
+    function openModal(book) {
+      const url = coverUrl(book.isbn);
+      if (url) {
+        modalCover.src = url;
+        modalCover.alt = book.title;
+        modalCover.style.display = "";
+      } else {
+        modalCover.style.display = "none";
+      }
+
+      modalTitle.textContent = book.title;
+      modalAuthor.textContent = book.author;
+
+      if (book.additionalAuthors) {
+        modalAdditionalAuthors.textContent = book.additionalAuthors;
+        modalAdditionalAuthorsWrap.hidden = false;
+      } else {
+        modalAdditionalAuthorsWrap.hidden = true;
+      }
+
+      if (book.genres && book.genres.length) {
+        renderPills(modalGenres, book.genres);
+        modalGenresWrap.hidden = false;
+      } else {
+        modalGenresWrap.hidden = true;
+      }
+
+      if (book.themes && book.themes.length) {
+        renderPills(modalThemes, book.themes);
+        modalThemesWrap.hidden = false;
+      } else {
+        modalThemesWrap.hidden = true;
+      }
+
+      if (book.motifs && book.motifs.length) {
+        renderPills(modalMotifs, book.motifs);
+        modalMotifsWrap.hidden = false;
+      } else {
+        modalMotifsWrap.hidden = true;
+      }
+
+      if (book.isbn) {
+        modalIsbn.textContent = book.isbn;
+        modalIsbnWrap.hidden = false;
+      } else {
+        modalIsbnWrap.hidden = true;
+      }
+
+      backdrop.classList.add("open");
+      backdrop.setAttribute("aria-hidden", "false");
+    }
+
+    function closeModal() {
+      backdrop.classList.remove("open");
+      backdrop.setAttribute("aria-hidden", "true");
+    }
+
+    backdrop.addEventListener("click", (e) => {
+      if (e.target === backdrop) closeModal();
+    });
+    document.querySelector(".modal-close").addEventListener("click", closeModal);
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeModal();
+    });
+
+    BOOKS
+      .slice()
+      .sort((a, b) => a.title.localeCompare(b.title))
+      .forEach((book) => grid.appendChild(renderCard(book)));
+  </script>
+</body>
+</html>
