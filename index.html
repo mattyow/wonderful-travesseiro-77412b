@@ -310,48 +310,375 @@
     // Required: title, author, isbn (use ISBN-13, no quotes/equals signs)
     // Optional: additionalAuthors, genres, themes, motifs
     // ----------------------------------------------------------------
-    const BOOKS = [
-      {
-        title: "The God of the Woods",
-        author: "Liz Moore",
-        isbn: "9780593418918",
-        genres: ["Literary Fiction", "Mystery"],
-        themes: ["family secrets", "class divide", "memory"],
-        motifs: ["the woods", "missing children", "summer camp"]
-      },
-      {
-        title: "Piranesi",
-        author: "Susanna Clarke",
-        isbn: "9781635577808",
-        genres: ["Fantasy", "Literary Fiction"],
-        themes: ["isolation", "identity", "knowledge"],
-        motifs: ["labyrinth", "statues", "tides"]
-      },
-      {
-        title: "The Road",
-        author: "Cormac McCarthy",
-        isbn: "9780307387899",
-        genres: ["Post-apocalyptic", "Literary Fiction"],
-        themes: ["love", "survival", "faith"],
-        motifs: ["ash", "fire", "the journey"]
-      },
-      {
-        title: "Stoner",
-        author: "John Williams",
-        isbn: "9781590171998",
-        genres: ["Literary Fiction"],
-        themes: ["unfulfilled life", "academia", "endurance"],
-        motifs: ["books", "marriage", "solitude"]
-      },
-      {
-        title: "Annihilation",
-        author: "Jeff VanderMeer",
-        isbn: "9780374104092",
-        genres: ["Weird Fiction", "Eco-horror"],
-        themes: ["the unknowable", "transformation", "self-erasure"],
-        motifs: ["the lighthouse", "spores", "the tower"]
-      }
-    ];
+   const BOOKS = [
+  {
+    title: "Discourse on Method and The Meditations",
+    author: "René Descartes",
+    additionalAuthors: "F.E. Sutcliffe (trans.)",
+    isbn: "9780140442069",
+    genres: ["Philosophy", "Classics"],
+    themes: ["Doubt", "The self", "Reason", "The existence of God"]
+  },
+  {
+    title: "Brave New World",
+    author: "Aldous Huxley",
+    isbn: "9780060809836",
+    genres: ["Dystopian fiction", "Classics", "Science fiction"],
+    themes: ["Control", "Consumerism", "Individuality", "Engineered happiness"]
+  },
+  {
+    title: "Symbols, Signs and Signets",
+    author: "Ernst Lehner",
+    isbn: "9780486222417",
+    genres: ["Design", "Reference"],
+    themes: ["Visual language", "Iconography", "Cultural communication"]
+  },
+  {
+    title: "A Canticle For Leibowitz",
+    author: "Walter M. Miller Jr.",
+    isbn: "9780553141245",
+    genres: ["Science fiction", "Post-apocalyptic"],
+    themes: ["Cyclical history", "Faith vs. science", "Preservation of knowledge"]
+  },
+  {
+    title: "Selected Stories",
+    author: "Anton Chekhov",
+    additionalAuthors: "Ann Dunnigan (trans.), Ernest J. Simmons (intro.)",
+    isbn: "9780451525116",
+    genres: ["Literary fiction", "Short stories", "Classics"],
+    themes: ["Everyday cruelty", "Missed connections", "Rural Russia", "Ennui"]
+  },
+  {
+    title: "A Severe Mercy",
+    author: "Sheldon Vanauken",
+    isbn: "9780553129632",
+    genres: ["Memoir", "Theology", "Christian literature"],
+    themes: ["Grief", "Conversion", "Romantic love", "Loss as gift"]
+  },
+  {
+    title: "The Rings of Saturn",
+    author: "W.G. Sebald",
+    additionalAuthors: "Michael Hulse (trans.)",
+    isbn: "9780811226158",
+    genres: ["Literary fiction", "Memoir", "Travel writing"],
+    themes: ["Memory", "Decay", "History's hidden violence", "Melancholy"]
+  },
+  {
+    title: "Anna Karenina",
+    author: "Leo Tolstoy",
+    additionalAuthors: "Amy Mandelker (ed.), Constance Garnett (trans.)",
+    isbn: "9781593080273",
+    genres: ["Literary fiction", "Classics", "Russian literature"],
+    themes: ["Adultery", "Marriage", "Social judgment", "The search for meaning"]
+  },
+  {
+    title: "The Confidence-Man",
+    author: "Herman Melville",
+    isbn: "9780451516985",
+    genres: ["Literary fiction", "Classics", "Satire"],
+    themes: ["Trust", "American identity", "Performance of self", "Fraud"]
+  },
+  {
+    title: "The Odyssey",
+    author: "Homer",
+    additionalAuthors: "E.V. Rieu (trans.), Peter Jones (ed.), D.C.H. Rieu (rev.)",
+    isbn: "9780140449112",
+    genres: ["Epic poetry", "Classics", "Mythology"],
+    themes: ["Homecoming", "Hospitality", "Cunning vs. force", "Fidelity"]
+  },
+  {
+    title: "Gormenghast",
+    author: "Mervyn Peake",
+    isbn: "9780786198009",
+    genres: ["Fantasy", "Literary fiction", "Gothic"],
+    themes: ["Ritual vs. ambition", "The weight of tradition", "Outsider as threat"]
+  },
+  {
+    title: "Titus Alone (Gormenghast, #3)",
+    author: "Mervyn Peake",
+    isbn: "9780345730091",
+    genres: ["Fantasy", "Literary fiction"],
+    themes: ["Exile", "Modernity vs. heritage", "Loss of identity"]
+  },
+  {
+    title: "The Fellowship of the Ring (The Lord of the Rings, #1)",
+    author: "J.R.R. Tolkien",
+    isbn: "9780345339706",
+    genres: ["High fantasy", "Classics", "Epic"],
+    themes: ["Temptation of power", "Fellowship", "Hidden goodness", "The long defeat"]
+  },
+  {
+    title: "The Two Towers (The Lord of the Rings, #2)",
+    author: "J.R.R. Tolkien",
+    isbn: "9780345339713",
+    genres: ["High fantasy", "Classics", "Epic"],
+    themes: ["Loyalty", "Courage in despair", "Corruption", "Small acts of mercy"]
+  },
+  {
+    title: "The Return of the King (The Lord of the Rings, #3)",
+    author: "J.R.R. Tolkien",
+    isbn: "9780345339737",
+    genres: ["High fantasy", "Classics", "Epic"],
+    themes: ["Sacrifice", "Kingship", "Endings and grief", "Restoration"]
+  },
+  {
+    title: "Lord of the Flies",
+    author: "William Golding",
+    isbn: "9780399501487",
+    genres: ["Literary fiction", "Classics", "Allegory"],
+    themes: ["Civilization vs. savagery", "Innocence lost", "Group violence"]
+  },
+  {
+    title: "Basics of Semiotics",
+    author: "John Deely",
+    isbn: "9780253205681",
+    genres: ["Philosophy", "Linguistics", "Academic"],
+    themes: ["The nature of signs", "Meaning-making", "Peircean thought"]
+  },
+  {
+    title: "Life of Pi",
+    author: "Yann Martel",
+    isbn: "9780156027328",
+    genres: ["Literary fiction", "Adventure", "Magical realism"],
+    themes: ["Faith", "Storytelling vs. truth", "Survival", "The nature of belief"]
+  },
+  {
+    title: "Sword & Citadel (The Book of the New Sun, #3–4)",
+    author: "Gene Wolfe",
+    isbn: "9780312890186",
+    genres: ["Science fantasy", "Literary fiction"],
+    themes: ["Memory and identity", "Messianic destiny", "Unreliable narration"]
+  },
+  {
+    title: "Shadow & Claw (The Book of the New Sun, #1–2)",
+    author: "Gene Wolfe",
+    isbn: "9780312890179",
+    genres: ["Science fantasy", "Literary fiction"],
+    themes: ["Guilt and atonement", "Torture and mercy", "The unreliable past"]
+  },
+  {
+    title: "The Hollow Lands (Dancers at the End of Time, #2)",
+    author: "Michael Moorcock",
+    isbn: "9780060130022",
+    genres: ["Science fiction", "Decadent literature"],
+    themes: ["Decadence", "Time travel", "Sincerity vs. artifice", "Love across eras"]
+  },
+  {
+    title: "An Alien Heat (Dancers at the End of Time, #1)",
+    author: "Michael Moorcock",
+    isbn: "9780060130046",
+    genres: ["Science fiction", "Decadent literature"],
+    themes: ["End of history", "Artifice", "Romantic awakening", "Aestheticism"]
+  },
+  {
+    title: "The Perennial Philosophy",
+    author: "Aldous Huxley",
+    isbn: "9780061724947",
+    genres: ["Philosophy", "Religion", "Mysticism"],
+    themes: ["Mystical experience", "Unity across traditions", "The divine ground"]
+  },
+  {
+    title: "Zen and the Art of Motorcycle Maintenance",
+    author: "Robert M. Pirsig",
+    isbn: "9780553277470",
+    genres: ["Philosophy", "Autobiographical fiction"],
+    themes: ["Quality", "The romantic vs. the classical", "Sanity and breakdown", "Father and son"]
+  },
+  {
+    title: "Bridgman's Complete Guide to Drawing From Life: Over 1,000 Illustrations",
+    author: "George B. Bridgman",
+    isbn: "9780806930152",
+    genres: ["Design", "Reference", "Art instruction"],
+    themes: ["Anatomy", "Figure drawing", "Constructive form"]
+  },
+  {
+    title: "Cabinet of Natural Curiosities",
+    author: "Albertus Seba",
+    additionalAuthors: "Rainer Willmann (ed.)",
+    isbn: "9783836515832",
+    genres: ["Design", "Natural history", "Reference"],
+    themes: ["Taxonomic wonder", "The Wunderkammer", "Pre-Linnaean nature"]
+  },
+  {
+    title: "Mere Christianity",
+    author: "C.S. Lewis",
+    isbn: "9780060652883",
+    genres: ["Theology", "Philosophy", "Christian literature"],
+    themes: ["Moral law", "Apologetics", "Virtue", "The common faith"]
+  },
+  {
+    title: "The Creative Gift: Essays on Art and the Christian Life",
+    author: "Hans R. Rookmaaker",
+    isbn: "9780891072133",
+    genres: ["Theology", "Art criticism", "Christian literature"],
+    themes: ["Vocation of the artist", "Creation as gift", "Faith and culture"]
+  },
+  {
+    title: "Child of God",
+    author: "Cormac McCarthy",
+    isbn: "9780679728740",
+    genres: ["Literary fiction", "Southern Gothic"],
+    themes: ["Outsiderhood", "Violence and humanity", "Appalachian decay"]
+  },
+  {
+    title: "Purity of Heart Is To Will One Thing: Spiritual Preparation for the Office of Confession",
+    author: "Søren Kierkegaard",
+    additionalAuthors: "Douglas V. Steere (trans.)",
+    isbn: "9781603866231",
+    genres: ["Philosophy", "Theology", "Devotional"],
+    themes: ["Single-mindedness", "Spiritual integrity", "Self-examination"]
+  },
+  {
+    title: "Love in the Time of Cholera",
+    author: "Gabriel García Márquez",
+    additionalAuthors: "Edith Grossman (trans.)",
+    isbn: "9781400034680",
+    genres: ["Literary fiction", "Classics", "Magical realism"],
+    themes: ["Enduring love", "Aging", "Patience", "Latin American modernity"]
+  },
+  {
+    title: "Deeper Into Pictures: An Essay on Pictorial Representation",
+    author: "Flint Schier",
+    isbn: "9780521109406",
+    genres: ["Philosophy", "Aesthetics", "Academic"],
+    themes: ["Depiction", "Resemblance", "Perception and image"]
+  },
+  {
+    title: "Handbook for Preparing Visual Media",
+    author: "Ed Minor",
+    isbn: "9780070424074",
+    genres: ["Design", "Reference", "Instructional"],
+    themes: ["Visual communication", "Production craft", "Media literacy"]
+  },
+  {
+    title: "LogoLounge 8",
+    author: "Bill Gardner",
+    additionalAuthors: "Anne Hellman",
+    isbn: "9781592538348",
+    genres: ["Design", "Reference"],
+    themes: ["Identity design", "Trends in branding", "Logo craft"]
+  },
+  {
+    title: "LogoLounge 7",
+    author: "Bill Gardner",
+    additionalAuthors: "Anne Hellman",
+    isbn: "9781592537273",
+    genres: ["Design", "Reference"],
+    themes: ["Identity design", "Trends in branding", "Logo craft"]
+  },
+  {
+    title: "Made with FontFont: Type for Independent Minds",
+    author: "Jan Middendorp",
+    additionalAuthors: "Erik Spiekermann (co-author)",
+    isbn: "9780977985043",
+    genres: ["Design", "Typography", "Reference"],
+    themes: ["Independent type foundries", "Typographic culture", "Designer voice"]
+  },
+  {
+    title: "American Trademark Designs",
+    author: "Barbara Baer Capitman",
+    isbn: "9780486232591",
+    genres: ["Design", "Reference", "History"],
+    themes: ["Trademark history", "Commercial iconography", "American identity"]
+  },
+  {
+    title: "Designing Type",
+    author: "Karen Cheng",
+    isbn: "9780300111507",
+    genres: ["Design", "Typography", "Reference"],
+    themes: ["Letterform construction", "Type anatomy", "Design pedagogy"]
+  },
+  {
+    title: "Adobe Type Library Reference Book",
+    author: "Adobe Systems Inc.",
+    isbn: "9780321544728",
+    genres: ["Design", "Reference", "Typography"],
+    themes: ["Typeface specimens", "Type classification", "Design resources"]
+  },
+  {
+    title: "Dieter Rams: As Little Design as Possible",
+    author: "Sophie Lovell",
+    isbn: "9780714849188",
+    genres: ["Design", "Biography", "Monograph"],
+    themes: ["Functionalism", "Restraint", "Industrial design philosophy"]
+  },
+  {
+    title: "The New Drawing on the Right Side of the Brain",
+    author: "Betty Edwards",
+    isbn: "9780874774245",
+    genres: ["Design", "Art instruction", "Cognitive science"],
+    themes: ["Perception", "Drawing as seeing", "Right-brain thinking"]
+  },
+  {
+    title: "Alphabeasties and Other Amazing Types",
+    author: "Sharon Werner",
+    additionalAuthors: "Sarah Forss (co-author)",
+    isbn: "9781934706787",
+    genres: ["Design", "Children's books", "Typography"],
+    themes: ["Letter as image", "Playful design", "Visual learning"]
+  },
+  {
+    title: "The World of Vermeer: 1632–1675 (Time-Life Library of Art)",
+    author: "Hans Koningsberger",
+    isbn: "9780809402083",
+    genres: ["Biography", "Art history", "Monograph"],
+    themes: ["Dutch Golden Age", "Domestic interiors", "Light and stillness"]
+  },
+  {
+    title: "Type: A Visual History of Typefaces and Graphic Styles (Volume 1, 1628–1900)",
+    author: "Cees W. de Jong",
+    additionalAuthors: "Alston W. Purvis, Jan Tholenaar (co-authors)",
+    isbn: "9783836511018",
+    genres: ["Design", "Typography", "History"],
+    themes: ["Specimen history", "Letterpress era", "Typographic evolution"]
+  },
+  {
+    title: "Type: A Visual History of Typefaces and Graphic Styles (Volume 2, 1901–1938)",
+    author: "Cees W. de Jong",
+    additionalAuthors: "Alston W. Purvis, Jan Tholenaar (co-authors)",
+    isbn: "9783836515146",
+    genres: ["Design", "Typography", "History"],
+    themes: ["Modernist typography", "Specimen history", "Industrial print culture"]
+  },
+  {
+    title: "Manuals 1: Design & Identity Guidelines",
+    author: "Adrian Shaughnessy",
+    additionalAuthors: "Tony Brook, Sarah Schrauwen (co-authors)",
+    isbn: "9780957511446",
+    genres: ["Design", "Reference"],
+    themes: ["Brand systems", "Identity documentation", "Design rigor"]
+  },
+  {
+    title: "How to",
+    author: "Michael Bierut",
+    isbn: "9780062413901",
+    genres: ["Design", "Memoir", "Reference"],
+    themes: ["Design practice", "Working with clients", "A designer's life"]
+  },
+  {
+    title: "The Pentagram Papers",
+    author: "Pentagram",
+    additionalAuthors: "Delphine Hirasuna (ed.)",
+    isbn: "9780811855631",
+    genres: ["Design", "Reference", "Essays"],
+    themes: ["Design ephemera", "Visual curiosities", "Studio culture"]
+  },
+  {
+    title: "Identify: Basic Principles of Identity Design in the Iconic Trademarks of Chermayeff & Geismar",
+    author: "Ivan Chermayeff",
+    additionalAuthors: "Sagi Haviv, Tom Geismar (co-authors)",
+    isbn: "9781440310324",
+    genres: ["Design", "Reference", "Monograph"],
+    themes: ["Logo design", "Identity craft", "Mid-century modern branding"]
+  },
+  {
+    title: "Homage to the Alphabet: Typeface Sourcebook",
+    author: "Rockport Publishers",
+    isbn: "9780935603477",
+    genres: ["Design", "Typography", "Reference"],
+    themes: ["Typeface specimens", "Letterform variety", "Design resources"]
+  }
+];
 
     // ----------------------------------------------------------------
     // Rendering
