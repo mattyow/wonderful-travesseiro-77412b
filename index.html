@@ -75,10 +75,43 @@
       padding: 2rem;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-      gap: 2rem 1.5rem;
+.search-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem 1.5rem;
+    }
+    .search-input {
+      width: 100%;
+      max-width: 420px;
+      padding: 0.65rem 0.9rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      background: transparent;
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.15s ease;
+    }
+    .search-input:focus {
+      border-color: #999;
+    }
+    .search-input::placeholder {
+      color: var(--muted);
+    }
+    .results-count {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--muted);
+      margin-top: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .empty-state {
+      text-align: center;
+      color: var(--muted);
+      padding: 4rem 2rem;
+      font-style: italic;
     }
 
     .card {
