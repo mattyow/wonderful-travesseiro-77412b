@@ -2699,10 +2699,49 @@
       if (e.key === "Escape") closeModal();
     });
 
-    BOOKS
-      .slice()
-      .sort((a, b) => a.title.localeCompare(b.title))
-      .forEach((book) => grid.appendChild(renderCard(book)));
+// Pre-sort books once
+    const SORTED_BOOKS = BOOKS.slice().sort((a, b) => a.title.localeCompare(b.title));
+
+    const searchInput = document.getElementById("search");
+    const resultsCount = document.getElementById("results-count");
+
+    function normalize(str) {
+      return (str || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    }
+
+    function bookMatches(book, query) {
+      if (!query) return true;
+      const haystack = normalize(
+        [book.title, book.author, book.additionalAuthors].filter(Boolean).join(" ")
+      );
+      // Match all whitespace-separated terms
+      return query.split(/\s+/).every((term) => haystack.includes(term));
+    }
+
+    function render(query = "") {
+      const normalizedQuery = normalize(query.trim());
+      const filtered = SORTED_BOOKS.filter((book) => bookMatches(book, normalizedQuery));
+
+      grid.innerHTML = "";
+
+      if (filtered.length === 0) {
+        const empty = document.createElement("div");
+        empty.className = "empty-state";
+        empty.textContent = "No books found.";
+        grid.appendChild(empty);
+      } else {
+        filtered.forEach((book) => grid.appendChild(renderCard(book)));
+      }
+
+      const total = SORTED_BOOKS.length;
+      resultsCount.textContent = normalizedQuery
+        ? `${filtered.length} of ${total} books`
+        : `${total} books`;
+    }
+
+    searchInput.addEventListener("input", (e) => render(e.target.value));
+
+    render();
   </script>
 </body>
 </html>
