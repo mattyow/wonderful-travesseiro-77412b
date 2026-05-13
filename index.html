@@ -69,13 +69,19 @@
       font-size: 1rem;
     }
 
-    main {
+main {
       max-width: 1200px;
       margin: 0 auto;
       padding: 2rem;
     }
 
-.search-wrap {
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 2rem 1.5rem;
+    }
+
+    .search-wrap {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 2rem 1.5rem;
