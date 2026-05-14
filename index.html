@@ -80,7 +80,33 @@ main {
       grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
       gap: 2rem 1.5rem;
     }
-
+.filters {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+    .filter-pill {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      padding: 0.3rem 0.7rem;
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--text);
+      cursor: pointer;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+    .filter-pill:hover {
+      border-color: #999;
+    }
+    .filter-pill.active {
+      background: var(--text);
+      color: var(--bg);
+      border-color: var(--text);
+    },
     .search-wrap {
       max-width: 1200px;
       margin: 0 auto;
@@ -349,7 +375,7 @@ main {
     />
     <div id="results-count" class="results-count"></div>
   </div>
-
+<div id="filters" class="filters"></div>
   <main>
     <div id="grid" class="grid"></div>
   </main>
@@ -5143,25 +5169,75 @@ main {
 // Pre-sort books once
     const SORTED_BOOKS = BOOKS.slice().sort((a, b) => a.title.localeCompare(b.title));
 
+const SORTED_BOOKS = BOOKS.slice().sort((a, b) => a.title.localeCompare(b.title));
+
     const searchInput = document.getElementById("search");
     const resultsCount = document.getElementById("results-count");
+    const filtersContainer = document.getElementById("filters");
+
+    let activeGenre = null;
 
     function normalize(str) {
       return (str || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
     }
 
-    function bookMatches(book, query) {
+    function bookMatches(book, query, genre) {
+      if (genre && !(book.genres || []).includes(genre)) return false;
       if (!query) return true;
       const haystack = normalize(
         [book.title, book.author, book.additionalAuthors].filter(Boolean).join(" ")
       );
-      // Match all whitespace-separated terms
       return query.split(/\s+/).every((term) => haystack.includes(term));
+    }
+
+    function getGenreCounts() {
+      const counts = new Map();
+      SORTED_BOOKS.forEach((book) => {
+        (book.genres || []).forEach((g) => {
+          counts.set(g, (counts.get(g) || 0) + 1);
+        });
+      });
+      return counts;
+    }
+
+    function renderFilters() {
+      filtersContainer.innerHTML = "";
+      const counts = getGenreCounts();
+      // Sort genres by frequency (most common first), then alphabetically
+      const sortedGenres = Array.from(counts.entries()).sort((a, b) => {
+        if (b[1] !== a[1]) return b[1] - a[1];
+        return a[0].localeCompare(b[0]);
+      });
+
+      // "All" pill first
+      const allBtn = document.createElement("button");
+      allBtn.className = "filter-pill" + (activeGenre === null ? " active" : "");
+      allBtn.textContent = `All (${SORTED_BOOKS.length})`;
+      allBtn.addEventListener("click", () => {
+        activeGenre = null;
+        renderFilters();
+        render(searchInput.value);
+      });
+      filtersContainer.appendChild(allBtn);
+
+      sortedGenres.forEach(([genre, count]) => {
+        const btn = document.createElement("button");
+        btn.className = "filter-pill" + (activeGenre === genre ? " active" : "");
+        btn.textContent = `${genre} (${count})`;
+        btn.addEventListener("click", () => {
+          activeGenre = activeGenre === genre ? null : genre;
+          renderFilters();
+          render(searchInput.value);
+        });
+        filtersContainer.appendChild(btn);
+      });
     }
 
     function render(query = "") {
       const normalizedQuery = normalize(query.trim());
-      const filtered = SORTED_BOOKS.filter((book) => bookMatches(book, normalizedQuery));
+      const filtered = SORTED_BOOKS.filter((book) =>
+        bookMatches(book, normalizedQuery, activeGenre)
+      );
 
       grid.innerHTML = "";
 
@@ -5175,13 +5251,18 @@ main {
       }
 
       const total = SORTED_BOOKS.length;
-      resultsCount.textContent = normalizedQuery
-        ? `${filtered.length} of ${total} books`
+      const parts = [];
+      if (activeGenre) parts.push(activeGenre);
+      if (normalizedQuery) parts.push(`"${query.trim()}"`);
+      const filterText = parts.length ? ` matching ${parts.join(" + ")}` : "";
+      resultsCount.textContent = (normalizedQuery || activeGenre)
+        ? `${filtered.length} of ${total} books${filterText}`
         : `${total} books`;
     }
 
     searchInput.addEventListener("input", (e) => render(e.target.value));
 
+    renderFilters();
     render();
     const toTopBtn = document.getElementById("to-top");
 
