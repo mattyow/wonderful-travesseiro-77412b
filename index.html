@@ -119,6 +119,39 @@ main {
       padding: 4rem 2rem;
       font-style: italic;
     }
+    .to-top {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      width: 2.75rem;
+      height: 2.75rem;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      border-radius: 999px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(8px);
+      transition: opacity 0.2s ease, transform 0.2s ease, background 0.15s ease;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+      z-index: 50;
+    }
+    .to-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+    .to-top:hover {
+      background: var(--card);
+    }
+    .to-top svg {
+      width: 1.1rem;
+      height: 1.1rem;
+    },
 
     .card {
       cursor: pointer;
@@ -5143,6 +5176,25 @@ main {
     searchInput.addEventListener("input", (e) => render(e.target.value));
 
     render();
+    const toTopBtn = document.getElementById("to-top");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 600) {
+        toTopBtn.classList.add("visible");
+      } else {
+        toTopBtn.classList.remove("visible");
+      }
+    });
+
+    toTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
   </script>
+  <button id="to-top" class="to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 19V5" />
+      <path d="M5 12l7-7 7 7" />
+    </svg>
+  </button>
 </body>
 </html>
