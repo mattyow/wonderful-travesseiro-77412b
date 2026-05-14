@@ -88,6 +88,48 @@ main {
       flex-wrap: wrap;
       gap: 0.4rem;
     }
+    .filters-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem 1.5rem;
+    }
+    .filters-toggle {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      margin-bottom: 0.75rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .filters-toggle:hover {
+      color: var(--text);
+    }
+    .filters-toggle svg {
+      width: 0.7rem;
+      height: 0.7rem;
+      transition: transform 0.2s ease;
+    }
+    .filters-toggle[aria-expanded="true"] svg {
+      transform: rotate(180deg);
+    }
+    .filters {
+      max-width: none;
+      margin: 0;
+      padding: 0;
+      display: none;
+    }
+    .filters.open {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
     .filter-pill {
       font-family: var(--font-mono);
       font-size: 0.75rem;
@@ -375,7 +417,15 @@ main {
     />
     <div id="results-count" class="results-count"></div>
   </div>
-<div id="filters" class="filters"></div>
+<div class="filters-wrap">
+    <button id="filters-toggle" class="filters-toggle" aria-expanded="false" aria-controls="filters">
+      <span id="filters-toggle-label">Filter by genre</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </button>
+    <div id="filters" class="filters"></div>
+  </div>
   <main>
     <div id="grid" class="grid"></div>
   </main>
@@ -5353,6 +5403,29 @@ async function openModal(book) {
     }
 
     searchInput.addEventListener("input", (e) => render(e.target.value));
+
+const filtersToggle = document.getElementById("filters-toggle");
+    const filtersToggleLabel = document.getElementById("filters-toggle-label");
+
+    function updateToggleLabel() {
+      if (activeGenre) {
+        filtersToggleLabel.textContent = `Filter: ${activeGenre}`;
+      } else {
+        filtersToggleLabel.textContent = "Filter by genre";
+      }
+    }
+
+    filtersToggle.addEventListener("click", () => {
+      const isOpen = filtersContainer.classList.toggle("open");
+      filtersToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+
+    // Wrap render() so we also update the toggle label whenever filtering changes
+    const originalRender = render;
+    render = function (query = "") {
+      updateToggleLabel();
+      return originalRender(query);
+    };
 
     renderFilters();
     render();
