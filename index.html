@@ -5041,10 +5041,115 @@ main {
     const modalIsbnWrap = document.getElementById("modal-isbn-wrap");
     const modalIsbn = document.getElementById("modal-isbn");
 
-    function coverUrl(isbn) {
-      if (!isbn) return null;
+  // ----------------------------------------------------------------
+    // Cover image lookup: Google Books primary, Open Library fallback.
+    // Lazy-loaded via IntersectionObserver — covers fetch only when
+    // their card scrolls into view. Results cached in memory.
+    // ----------------------------------------------------------------
+    const coverCache = new Map();        // isbn -> resolved URL (or null)
+    const inflightLookups = new Map();   // isbn -> Promise<url|null>
+
+    function openLibraryUrl(isbn) {
       return `https://covers.openlibrary.org/b/isbn/${isbn}-L.jpg`;
     }
+
+    async function googleBooksCover(isbn) {
+      try {
+        const res = await fetch(
+          `https://www.googleapis.com/books/v1/volumes?q=isbn:${isbn}&fields=items(volumeInfo/imageLinks)`
+        );
+        if (!res.ok) return null;
+        const data = await res.json();
+        const links = data?.items?.[0]?.volumeInfo?.imageLinks;
+        if (!links) return null;
+        // Prefer largest available
+        let url =
+          links.extraLarge ||
+          links.large ||
+          links.medium ||
+          links.small ||
+          links.thumbnail ||
+          links.smallThumbnail;
+        if (!url) return null;
+        // Google returns http:// — upgrade to https
+        url = url.replace(/^http:\/\//, "https://");
+        // Strip page-curl edge and request a larger zoom when possible
+        url = url.replace(/&edge=curl/, "");
+        return url;
+      } catch (err) {
+        return null;
+      }
+    }
+
+    function checkImageLoads(url) {
+      // Test that an image URL actually resolves to a usable image.
+      // Open Library returns a 1x1 placeholder if no cover exists.
+      return new Promise((resolve) => {
+        const probe = new Image();
+        probe.onload = () => {
+          // 1x1 image = Open Library's "no cover" placeholder
+          if (probe.naturalWidth <= 1 && probe.naturalHeight <= 1) {
+            resolve(false);
+          } else {
+            resolve(true);
+          }
+        };
+        probe.onerror = () => resolve(false);
+        probe.src = url;
+      });
+    }
+
+    async function findCover(isbn) {
+      if (!isbn) return null;
+      if (coverCache.has(isbn)) return coverCache.get(isbn);
+      if (inflightLookups.has(isbn)) return inflightLookups.get(isbn);
+
+      const lookup = (async () => {
+        // Try Google Books first
+        const gUrl = await googleBooksCover(isbn);
+        if (gUrl) {
+          coverCache.set(isbn, gUrl);
+          return gUrl;
+        }
+        // Fall back to Open Library
+        const oUrl = openLibraryUrl(isbn);
+        const valid = await checkImageLoads(oUrl);
+        const result = valid ? oUrl : null;
+        coverCache.set(isbn, result);
+        return result;
+      })();
+
+      inflightLookups.set(isbn, lookup);
+      const result = await lookup;
+      inflightLookups.delete(isbn);
+      return result;
+    }
+
+    // IntersectionObserver triggers cover lookup when card enters viewport
+    const coverObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const wrap = entry.target;
+          const isbn = wrap.dataset.isbn;
+          coverObserver.unobserve(wrap);
+
+          findCover(isbn).then((url) => {
+            if (!url) return;
+            const img = document.createElement("img");
+            img.src = url;
+            img.alt = wrap.dataset.title || "";
+            img.loading = "lazy";
+            img.decoding = "async";
+            img.style.position = "absolute";
+            img.style.inset = "0";
+            img.onerror = () => { img.remove(); };
+            wrap.appendChild(img);
+          });
+        });
+      },
+      { rootMargin: "200px" }   // Start fetching 200px before entering view
+    );
 
     function renderCard(book) {
       const card = document.createElement("button");
@@ -5053,30 +5158,19 @@ main {
 
       const wrap = document.createElement("div");
       wrap.className = "cover-wrap";
+      wrap.dataset.isbn = book.isbn || "";
+      wrap.dataset.title = book.title;
 
-      const url = coverUrl(book.isbn);
       const placeholder = document.createElement("div");
       placeholder.className = "placeholder";
       placeholder.innerHTML = `
         <span class="ph-title">${book.title}</span>
         <span class="ph-author">${book.author}</span>
       `;
+      wrap.appendChild(placeholder);
 
-      if (url) {
-        // Placeholder sits behind the image as fallback
-        wrap.appendChild(placeholder);
-        const img = document.createElement("img");
-        img.src = url;
-        img.alt = book.title;
-        img.loading = "lazy";
-        img.decoding = "async";
-        img.style.position = "absolute";
-        img.style.inset = "0";
-        img.onerror = () => { img.remove(); };
-        wrap.appendChild(img);
-      } else {
-        wrap.appendChild(placeholder);
-      }
+      // Only start observing if there's an ISBN to look up
+      if (book.isbn) coverObserver.observe(wrap);
 
       const meta = document.createElement("div");
       meta.className = "meta";
@@ -5101,8 +5195,8 @@ main {
       });
     }
 
-    function openModal(book) {
-      const url = coverUrl(book.isbn);
+async function openModal(book) {
+      const url = await findCover(book.isbn);
       if (url) {
         modalCover.src = url;
         modalCover.alt = book.title;
