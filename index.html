@@ -5327,9 +5327,15 @@ async function openModal(book) {
       if (e.key === "Escape") closeModal();
     });
 
-// Pre-sort books once
-    const SORTED_BOOKS = BOOKS.slice().sort((a, b) => a.title.localeCompare(b.title));
-
+// Fisher-Yates shuffle for a fair random order
+    const SORTED_BOOKS = (() => {
+      const arr = BOOKS.slice();
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+      return arr;
+    })();
     const searchInput = document.getElementById("search");
     const resultsCount = document.getElementById("results-count");
     const filtersContainer = document.getElementById("filters");
