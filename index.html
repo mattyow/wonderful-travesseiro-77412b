@@ -57,10 +57,20 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    header {
+header {
       max-width: 1200px;
       margin: 0 auto;
       padding: 4rem 2rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+    .logo {
+      width: auto;
+      height: 3rem;
+      color: var(--text);
+      flex-shrink: 0;
     }
 h1 {
       font-family: var(--font-display);
@@ -419,6 +429,7 @@ main {
 <body>
   <header>
     <h1>Matt Yow’s bookshelf</h1>
+        <img src="matt_yow_logo.svg" alt="Matt Yow logo" class="logo" />
   </header>
 
 <div class="search-wrap">
