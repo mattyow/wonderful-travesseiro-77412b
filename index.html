@@ -161,6 +161,15 @@ main {
       margin: 0 auto;
       padding: 0 2rem 1.5rem;
     }
+    .search-label {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
     .search-input {
       width: 100%;
       max-width: 420px;
@@ -177,8 +186,8 @@ main {
     .search-input:focus {
       border-color: rgba(0, 54, 202, 0.5);
     }
-    .search-input::placeholder {
-      color: var(--muted);
+.search-input::placeholder {
+      color: rgba(0, 54, 202, 0.5);
     }
     .results-count {
       font-family: var(--font-mono);
@@ -414,11 +423,12 @@ main {
   </header>
 
 <div class="search-wrap">
+    <label for="search" class="search-label">Search</label>
     <input
       id="search"
       class="search-input"
       type="text"
-      placeholder="Search by title or author…"
+      placeholder="Title or author…"
       autocomplete="off"
       spellcheck="false"
     />
