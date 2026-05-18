@@ -425,13 +425,25 @@ main {
       flex-wrap: wrap;
       gap: 0.4rem;
     }
-    .pill {
+.pill {
       font-family: var(--font-mono);
       font-size: 0.75rem;
       padding: 0.25rem 0.6rem;
       background: var(--card);
       border-radius: 999px;
       color: var(--text);
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+    .pill:hover {
+      border-color: var(--text);
+    }
+    .pill.unclickable {
+      cursor: default;
+    }
+    .pill.unclickable:hover {
+      border-color: transparent;
     }
     .modal-field-value {
       font-size: 1rem;
@@ -5280,14 +5292,37 @@ main {
       return card;
     }
 
-    function renderPills(container, items) {
+function renderPills(container, items, type) {
       container.innerHTML = "";
       items.forEach((label) => {
-        const pill = document.createElement("span");
+        const pill = document.createElement("button");
         pill.className = "pill";
+        pill.type = "button";
         pill.textContent = label;
+        pill.title = `Filter by ${label}`;
+        pill.addEventListener("click", (e) => {
+          e.stopPropagation();
+          filterFromModal(type, label);
+        });
         container.appendChild(pill);
       });
+    }
+
+function filterFromModal(type, value) {
+      closeModal();
+      searchInput.value = "";
+      if (type === "genre") {
+        activeGenre = value;
+        activeTheme = null;
+      } else if (type === "theme") {
+        activeGenre = null;
+        activeTheme = value;
+      }
+      renderFilters();
+      render("");
+      filtersContainer.classList.add("open");
+      filtersToggle.setAttribute("aria-expanded", "true");
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
 async function openModal(book) {
@@ -5311,14 +5346,14 @@ async function openModal(book) {
       }
 
       if (book.genres && book.genres.length) {
-        renderPills(modalGenres, book.genres);
+        renderPills(modalGenres, book.genres, "genre");
         modalGenresWrap.hidden = false;
       } else {
         modalGenresWrap.hidden = true;
       }
 
       if (book.themes && book.themes.length) {
-        renderPills(modalThemes, book.themes);
+        renderPills(modalThemes, book.themes, "theme");
         modalThemesWrap.hidden = false;
       } else {
         modalThemesWrap.hidden = true;
@@ -5374,8 +5409,9 @@ async function openModal(book) {
       return (str || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
     }
 
-    function bookMatches(book, query, genre) {
+function bookMatches(book, query, genre, exactTheme) {
       if (genre && !(book.genres || []).includes(genre)) return false;
+      if (exactTheme && !(book.themes || []).includes(exactTheme)) return false;
       if (!query) return true;
       const haystack = normalize(
         [book.title, book.author, book.additionalAuthors].filter(Boolean).join(" ")
@@ -5426,10 +5462,10 @@ async function openModal(book) {
       });
     }
 
-    function render(query = "") {
+function render(query = "") {
       const normalizedQuery = normalize(query.trim());
       const filtered = SORTED_BOOKS.filter((book) =>
-        bookMatches(book, normalizedQuery, activeGenre)
+        bookMatches(book, normalizedQuery, activeGenre, activeTheme)
       );
 
       grid.innerHTML = "";
@@ -5444,8 +5480,9 @@ async function openModal(book) {
       }
 
       const total = SORTED_BOOKS.length;
-      const parts = [];
+const parts = [];
       if (activeGenre) parts.push(activeGenre);
+      if (activeTheme) parts.push(`theme: ${activeTheme}`);
       if (normalizedQuery) parts.push(`"${query.trim()}"`);
       const filterText = parts.length ? ` matching ${parts.join(" + ")}` : "";
       resultsCount.textContent = (normalizedQuery || activeGenre)
@@ -5458,9 +5495,11 @@ async function openModal(book) {
 const filtersToggle = document.getElementById("filters-toggle");
     const filtersToggleLabel = document.getElementById("filters-toggle-label");
 
-    function updateToggleLabel() {
+function updateToggleLabel() {
       if (activeGenre) {
         filtersToggleLabel.textContent = `Filter: ${activeGenre}`;
+      } else if (activeTheme) {
+        filtersToggleLabel.textContent = `Theme: ${activeTheme}`;
       } else {
         filtersToggleLabel.textContent = "Filter by genre";
       }
