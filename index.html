@@ -108,6 +108,24 @@ header {
     .reset-logo:hover .logo {
       opacity: 0.7;
     }
+    .header-text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    .header-link {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s ease;
+    }
+    .header-link:hover {
+      border-bottom-color: var(--text);
+    }
 h1 {
       font-family: var(--font-display);
       font-size: 2.5rem;
@@ -476,9 +494,14 @@ main {
 </head>
 <body>
 <header>
-    <button id="reset-home" class="reset-home" type="button" aria-label="Clear filters and search">
-      <h1>Matt Yow’s bookshelf</h1>
-    </button>
+    <div class="header-text">
+      <button id="reset-home" class="reset-home" type="button" aria-label="Clear filters and search">
+        <h1>Matt Yow’s bookshelf</h1>
+      </button>
+      <a class="header-link" href="https://mattyow.notion.site/Reading-List-c54a5b92dfdb48c4993adf93faf685ed" target="_blank" rel="noopener">
+        Currently reading →
+      </a>
+    </div>
     <button id="reset-logo" class="reset-logo" type="button" aria-label="Clear filters and search">
       <img src="matt_yow_logo.svg" alt="Matt Yow logo" class="logo" />
     </button>
