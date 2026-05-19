@@ -5404,6 +5404,7 @@ async function openModal(book) {
     const filtersContainer = document.getElementById("filters");
 
     let activeGenre = null;
+    let activeTheme = null;
 
     function normalize(str) {
       return (str || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
