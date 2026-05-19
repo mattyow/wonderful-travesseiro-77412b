@@ -90,6 +90,24 @@ header {
       color: var(--text);
       flex-shrink: 0;
     }
+    .reset-home,
+    .reset-logo {
+      background: none;
+      border: none;
+      padding: 0;
+      margin: 0;
+      cursor: pointer;
+      color: inherit;
+      font: inherit;
+      text-align: left;
+    }
+    .reset-home h1 {
+      transition: opacity 0.15s ease;
+    }
+    .reset-home:hover h1,
+    .reset-logo:hover .logo {
+      opacity: 0.7;
+    }
 h1 {
       font-family: var(--font-display);
       font-size: 2.5rem;
@@ -457,9 +475,13 @@ main {
   </style>
 </head>
 <body>
-  <header>
-    <h1>Matt Yow’s bookshelf</h1>
-        <img src="matt_yow_logo.svg" alt="Matt Yow logo" class="logo" />
+<header>
+    <button id="reset-home" class="reset-home" type="button" aria-label="Clear filters and search">
+      <h1>Matt Yow's bookshelf</h1>
+    </button>
+    <button id="reset-logo" class="reset-logo" type="button" aria-label="Clear filters and search">
+      <img src="matt_yow_logo.svg" alt="Matt Yow logo" class="logo" />
+    </button>
   </header>
 
 <div class="search-wrap">
@@ -5492,6 +5514,21 @@ const parts = [];
     }
 
     searchInput.addEventListener("input", (e) => render(e.target.value));
+
+    function resetHome() {
+      activeGenre = null;
+      activeTheme = null;
+      searchInput.value = "";
+      renderFilters();
+      render("");
+      // Collapse the filter panel
+      filtersContainer.classList.remove("open");
+      filtersToggle.setAttribute("aria-expanded", "false");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    document.getElementById("reset-home").addEventListener("click", resetHome);
+    document.getElementById("reset-logo").addEventListener("click", resetHome);
 
 const filtersToggle = document.getElementById("filters-toggle");
     const filtersToggleLabel = document.getElementById("filters-toggle-label");
