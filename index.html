@@ -220,10 +220,19 @@ main {
       color: var(--bg);
       border-color: var(--text);
     }
-    .search-wrap {
+.search-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      max-width: none;
+      margin: 0;
+      padding: 1.5rem 2rem;
+      background: var(--bg);
+      border-bottom: 1px solid var(--card);
+    }
+    .search-wrap-inner {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 2rem 1.5rem;
     }
     .search-label {
       display: block;
@@ -508,16 +517,18 @@ main {
   </header>
 
 <div class="search-wrap">
-    <label for="search" class="search-label">Search</label>
-    <input
-      id="search"
-      class="search-input"
-      type="text"
-      placeholder="Title or author…"
-      autocomplete="off"
-      spellcheck="false"
-    />
-    <div id="results-count" class="results-count"></div>
+    <div class="search-wrap-inner">
+      <label for="search" class="search-label">Search</label>
+      <input
+        id="search"
+        class="search-input"
+        type="text"
+        placeholder="Title or author…"
+        autocomplete="off"
+        spellcheck="false"
+      />
+      <div id="results-count" class="results-count"></div>
+    </div>
   </div>
 <div class="filters-wrap">
     <button id="filters-toggle" class="filters-toggle" aria-expanded="false" aria-controls="filters">
