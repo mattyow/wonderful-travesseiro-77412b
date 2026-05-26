@@ -517,6 +517,24 @@ main {
       padding: 2rem 1.5rem;
       border-right: 1px solid var(--card);
       background: var(--bg);
+        /* Subtle scrollbar */
+      scrollbar-width: thin;
+      scrollbar-color: var(--card) transparent;
+    }
+
+    /* Webkit (Chrome, Safari) scrollbar styling */
+    .sidebar::-webkit-scrollbar {
+      width: 6px;
+    }
+    .sidebar::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .sidebar::-webkit-scrollbar-thumb {
+      background-color: var(--card);
+      border-radius: 999px;
+    }
+    .sidebar::-webkit-scrollbar-thumb:hover {
+      background-color: var(--border);
     }
     main {
       flex: 1;
