@@ -151,6 +151,71 @@ main {
       grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
       gap: 2rem 1.5rem;
     }
+    .view-toggle {
+      display: flex;
+      gap: 0.4rem;
+      padding: 0 0 1.5rem;
+    }
+    .view-btn {
+      flex: 1;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 0.4rem 0.6rem;
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--text);
+      cursor: pointer;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+    .view-btn:hover {
+      background: var(--card);
+    }
+    .view-btn.active {
+      background: var(--text);
+      color: var(--bg);
+      border-color: var(--text);
+    }
+
+    /* List view: replace grid with rows of metadata */
+    .grid.view-list {
+      display: block;
+    }
+    .grid.view-list .card {
+      display: block;
+      width: 100%;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--card);
+    }
+    .grid.view-list .card:hover {
+      background: var(--card);
+    }
+    .grid.view-list .cover-wrap {
+      display: none;
+    }
+    .grid.view-list .meta {
+      margin-top: 0;
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+    }
+    .grid.view-list .book-title {
+      font-size: 1.1rem;
+      flex: 1;
+      -webkit-line-clamp: unset;
+      display: block;
+      overflow: visible;
+    }
+    .grid.view-list .book-author {
+      font-size: 0.85rem;
+      white-space: nowrap;
+      flex-shrink: 0;
+      max-width: 40%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
 .filters {
       max-width: 1200px;
       margin: 0 auto;
@@ -721,7 +786,10 @@ main {
       <img src="matt_yow_logo.svg" alt="Matt Yow logo" class="logo" />
     </button>
   </header>
-
+<div class="view-toggle">
+      <button id="view-grid" class="view-btn active" type="button">Grid</button>
+      <button id="view-list" class="view-btn" type="button">List</button>
+    </div>
 <div class="search-wrap">
     <div class="search-wrap-inner">
       <label for="search" class="search-label">Search</label>
@@ -1199,6 +1267,23 @@ function updateToggleLabel() {
     };
 
     renderFilters();
+    const viewGridBtn = document.getElementById("view-grid");
+    const viewListBtn = document.getElementById("view-list");
+
+    function setView(mode) {
+      if (mode === "list") {
+        grid.classList.add("view-list");
+        viewListBtn.classList.add("active");
+        viewGridBtn.classList.remove("active");
+      } else {
+        grid.classList.remove("view-list");
+        viewGridBtn.classList.add("active");
+        viewListBtn.classList.remove("active");
+      }
+    }
+
+    viewGridBtn.addEventListener("click", () => setView("grid"));
+    viewListBtn.addEventListener("click", () => setView("list"));
     render();
     const toTopBtn = document.getElementById("to-top");
 
