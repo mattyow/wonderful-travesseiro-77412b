@@ -623,13 +623,41 @@ main {
       line-height: 1;
       z-index: 56;
     }
-    @media (max-width: 768px) {
+@media (max-width: 768px) {
       body {
         display: block;
       }
-      .sidebar-toggle {
+
+      /* Mobile top bar: title on left, hamburger on right */
+      .mobile-bar {
         display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 1rem 1.25rem;
+        background: var(--bg);
+        border-bottom: 1px solid var(--card);
+        position: sticky;
+        top: 0;
+        z-index: 50;
       }
+      .mobile-bar h1 {
+        font-size: 1.25rem;
+        margin: 0;
+      }
+      .sidebar-toggle {
+        position: static;
+        background: none;
+        border: 1px solid var(--border);
+        flex-shrink: 0;
+      }
+
+      /* Hide the desktop logo on mobile (title-only) */
+      .sidebar .reset-logo {
+        display: none;
+      }
+
+      /* Sidebar slides in from left */
       .sidebar {
         position: fixed;
         top: 0;
@@ -648,25 +676,37 @@ main {
       .sidebar.open .sidebar-close {
         display: block;
       }
+
+      /* The sidebar's own header/title is hidden on mobile
+         because the title now lives in the .mobile-bar */
+      .sidebar .header-text h1 {
+        display: none;
+      }
+
       main {
-        padding: 4.5rem 1.25rem 2rem;
+        padding: 1.5rem 1.25rem 2rem;
       }
     }
-      main {
-        padding: 4.5rem 1.25rem 2rem;
+
+    /* Hide mobile-bar on desktop */
+    @media (min-width: 769px) {
+      .mobile-bar {
+        display: none;
       }
     }
   </style>
 </head>
 <body>
-  <button id="sidebar-toggle" class="sidebar-toggle" aria-label="Toggle navigation" aria-expanded="false">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <line x1="3" y1="6" x2="21" y2="6"></line>
-      <line x1="3" y1="12" x2="21" y2="12"></line>
-      <line x1="3" y1="18" x2="21" y2="18"></line>
-    </svg>
-  </button>
-
+    <div class="mobile-bar">
+    <h1>Matt Yow's bookshelf</h1>
+    <button id="sidebar-toggle" class="sidebar-toggle" aria-label="Open navigation" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
   <aside id="sidebar" class="sidebar">
 <header>
     <div class="header-text">
