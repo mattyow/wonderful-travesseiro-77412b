@@ -1222,13 +1222,12 @@ function updateToggleLabel() {
       sidebarToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
     });
 
-    // Close sidebar when a filter or search is interacted with on mobile
+// Close sidebar when a filter pill is tapped on mobile (but not when
+    // expanding the filter list with the toggle).
     sidebar.addEventListener("click", (e) => {
       if (window.innerWidth > 768) return;
-      // Close when clicking a filter pill or filter toggle
-      if (e.target.closest(".filter-pill") || e.target.closest(".filters-toggle")) {
-        // Small delay so the click registers first
-        setTimeout(() => sidebar.classList.remove("open"), 100);
+      if (e.target.closest(".filter-pill")) {
+        setTimeout(() => closeSidebar(), 100);
       }
     });
   </script>
