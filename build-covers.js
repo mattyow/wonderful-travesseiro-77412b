@@ -1,10 +1,10 @@
 // build-covers.js — runs on Netlify's build server before deploy.
-// Reads books.js, fetches a cover URL for each book, writes books-enriched.js.
+// Reads books.js, fetches a cover URL and publication year for each book,
+// writes books-enriched.js.
 
 const fs = require('fs');
 const path = require('path');
 
-// Load books.js by reading the file and eval'ing the array
 const booksFileContent = fs.readFileSync(path.join(__dirname, 'books.js'), 'utf8');
 const match = booksFileContent.match(/const BOOKS = (\[[\s\S]*\]);?\s*$/);
 if (!match) {
@@ -14,9 +14,8 @@ if (!match) {
 const BOOKS = eval(match[1]);
 console.log(`Loaded ${BOOKS.length} books from books.js`);
 
-// Optional: reuse already-fetched cover URLs from a previous build
-// to skip API calls for books we've already enriched.
-let existingCovers = {};
+// Reuse already-fetched data from a previous build
+let existingData = {};
 const enrichedPath = path.join(__dirname, 'books-enriched.js');
 if (fs.existsSync(enrichedPath)) {
   try {
@@ -25,51 +24,124 @@ if (fs.existsSync(enrichedPath)) {
     if (prevMatch) {
       const prevBooks = eval(prevMatch[1]);
       prevBooks.forEach(b => {
-        if (b.isbn && b.coverUrl) existingCovers[b.isbn] = b.coverUrl;
+        if (b.isbn) {
+          existingData[b.isbn] = {
+            coverUrl: b.coverUrl,
+            publicationYear: b.publicationYear
+          };
+        }
       });
-      console.log(`Reusing ${Object.keys(existingCovers).length} cached cover URLs`);
+      console.log(`Reusing data for ${Object.keys(existingData).length} books from previous build`);
     }
   } catch (e) {
     console.log('Could not read previous enriched file — fetching everything fresh.');
   }
 }
 
-async function googleBooksCover(isbn) {
+function extractYear(dateStr) {
+  if (!dateStr) return null;
+  const m = String(dateStr).match(/\d{4}/);
+  return m ? parseInt(m[0], 10) : null;
+}
+
+async function googleBooksData(isbn) {
   try {
     const res = await fetch(
-      `https://www.googleapis.com/books/v1/volumes?q=isbn:${isbn}&fields=items(volumeInfo/imageLinks)`
+      `https://www.googleapis.com/books/v1/volumes?q=isbn:${isbn}&fields=items(volumeInfo(imageLinks,publishedDate))`
     );
-    if (!res.ok) return null;
+    if (!res.ok) return { coverUrl: null, year: null };
     const data = await res.json();
-    const links = data?.items?.[0]?.volumeInfo?.imageLinks;
-    if (!links) return null;
-    let url =
-      links.extraLarge || links.large || links.medium ||
-      links.small || links.thumbnail || links.smallThumbnail;
-    if (!url) return null;
-    return url.replace(/^http:\/\//, 'https://').replace(/&edge=curl/, '');
+    const info = data?.items?.[0]?.volumeInfo;
+    if (!info) return { coverUrl: null, year: null };
+
+    let coverUrl = null;
+    const links = info.imageLinks;
+    if (links) {
+      coverUrl = links.extraLarge || links.large || links.medium ||
+                 links.small || links.thumbnail || links.smallThumbnail;
+      if (coverUrl) {
+        coverUrl = coverUrl.replace(/^http:\/\//, 'https://').replace(/&edge=curl/, '');
+      }
+    }
+
+    const year = extractYear(info.publishedDate);
+    return { coverUrl, year };
   } catch {
-    return null;
+    return { coverUrl: null, year: null };
   }
 }
 
-async function openLibraryCover(isbn) {
-  const url = `https://covers.openlibrary.org/b/isbn/${isbn}-L.jpg?default=false`;
+async function openLibraryData(isbn) {
+  let coverUrl = null;
+  let year = null;
+
+  // Cover via Open Library Covers API
+  const coverCandidate = `https://covers.openlibrary.org/b/isbn/${isbn}-L.jpg?default=false`;
   try {
-    const res = await fetch(url, { method: 'HEAD' });
-    return res.ok ? url : null;
-  } catch {
-    return null;
-  }
+    const res = await fetch(coverCandidate, { method: 'HEAD' });
+    if (res.ok) coverUrl = coverCandidate;
+  } catch {}
+
+  // First publication year via Open Library books API
+  try {
+    const res = await fetch(
+      `https://openlibrary.org/api/books?bibkeys=ISBN:${isbn}&format=json&jscmd=details`
+    );
+    if (res.ok) {
+      const data = await res.json();
+      const entry = data[`ISBN:${isbn}`];
+      const works = entry?.details?.works;
+      if (works && works[0] && works[0].key) {
+        // Fetch the work for first_publish_date
+        const workRes = await fetch(`https://openlibrary.org${works[0].key}.json`);
+        if (workRes.ok) {
+          const workData = await workRes.json();
+          year = extractYear(workData.first_publish_date);
+        }
+      }
+      // Fallback to the edition's publish_date if we couldn't get the work
+      if (!year && entry?.details?.publish_date) {
+        year = extractYear(entry.details.publish_date);
+      }
+    }
+  } catch {}
+
+  return { coverUrl, year };
 }
 
-async function findCover(isbn) {
-  if (!isbn) return null;
-  if (existingCovers[isbn]) return existingCovers[isbn];
-  const g = await googleBooksCover(isbn);
-  if (g) return g;
-  const o = await openLibraryCover(isbn);
-  return o;
+async function findData(isbn) {
+  if (!isbn) return { coverUrl: null, year: null };
+
+  // Prefer Open Library for the YEAR (because it has first_publish_date),
+  // and Google Books for the COVER (better quality).
+  // We may need both APIs for a complete picture.
+
+  const cached = existingData[isbn] || {};
+
+  // If we have cached data with BOTH fields, skip the API entirely
+  if (cached.coverUrl && cached.publicationYear) {
+    return { coverUrl: cached.coverUrl, year: cached.publicationYear };
+  }
+
+  let coverUrl = cached.coverUrl || null;
+  let year = cached.publicationYear || null;
+
+  // Try Open Library first for the year (and as a cover fallback)
+  if (!year || !coverUrl) {
+    const ol = await openLibraryData(isbn);
+    if (!year && ol.year) year = ol.year;
+    if (!coverUrl && ol.coverUrl) coverUrl = ol.coverUrl;
+  }
+
+  // Use Google Books for the cover (preferred) and year fallback
+  if (!coverUrl || !year) {
+    const g = await googleBooksData(isbn);
+    // Always prefer Google's cover if we don't have one yet
+    if (!coverUrl && g.coverUrl) coverUrl = g.coverUrl;
+    if (!year && g.year) year = g.year;
+  }
+
+  return { coverUrl, year };
 }
 
 function sleep(ms) {
@@ -77,36 +149,40 @@ function sleep(ms) {
 }
 
 async function main() {
-  let hits = 0, misses = 0, cached = 0;
+  let newFetches = 0, cached = 0, missesCover = 0, missesYear = 0;
 
   for (let i = 0; i < BOOKS.length; i++) {
     const book = BOOKS[i];
-    if (!book.isbn) { misses++; continue; }
+    if (!book.isbn) { missesCover++; missesYear++; continue; }
 
-    // Skip API call if we already have it from a previous build
-    if (existingCovers[book.isbn]) {
-      book.coverUrl = existingCovers[book.isbn];
+    const existing = existingData[book.isbn];
+    const hasCachedFully = existing && existing.coverUrl && existing.publicationYear;
+
+    if (hasCachedFully) {
+      book.coverUrl = existing.coverUrl;
+      book.publicationYear = existing.publicationYear;
       cached++;
       continue;
     }
 
-    const url = await findCover(book.isbn);
-    if (url) {
-      book.coverUrl = url;
-      hits++;
-    } else {
-      misses++;
-    }
+    const result = await findData(book.isbn);
+    if (result.coverUrl) book.coverUrl = result.coverUrl;
+    else missesCover++;
+    if (result.year) book.publicationYear = result.year;
+    else missesYear++;
+
+    newFetches++;
 
     if ((i + 1) % 50 === 0) {
-      console.log(`${i + 1}/${BOOKS.length} | new: ${hits} | cached: ${cached} | miss: ${misses}`);
+      console.log(`${i + 1}/${BOOKS.length} | new: ${newFetches} | cached: ${cached} | no-cover: ${missesCover} | no-year: ${missesYear}`);
     }
-    await sleep(150); // pace requests
+    // Pace ~3 requests/sec to allow multiple API calls per book
+    await sleep(300);
   }
 
-  console.log(`\nFinal: ${hits} newly fetched, ${cached} from cache, ${misses} no cover`);
+  console.log(`\nFinal: ${newFetches} newly fetched, ${cached} from cache`);
+  console.log(`Missing covers: ${missesCover}, missing years: ${missesYear}`);
 
-  // Write the enriched file
   const out = 'const BOOKS = ' + JSON.stringify(BOOKS, null, 2) + ';\n';
   fs.writeFileSync(enrichedPath, out);
   console.log(`Wrote ${enrichedPath}`);
