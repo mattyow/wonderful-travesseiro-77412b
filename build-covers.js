@@ -82,27 +82,37 @@ async function openLibraryData(isbn) {
     if (res.ok) coverUrl = coverCandidate;
   } catch {}
 
-  // First publication year via Open Library books API
+async function openLibraryData(isbn) {
+  let coverUrl = null;
+  let year = null;
+
+  // Cover via Open Library Covers API
+  const coverCandidate = `https://covers.openlibrary.org/b/isbn/${isbn}-L.jpg?default=false`;
   try {
-    const res = await fetch(
-      `https://openlibrary.org/api/books?bibkeys=ISBN:${isbn}&format=json&jscmd=details`
-    );
+    const res = await fetch(coverCandidate, { method: 'HEAD' });
+    if (res.ok) coverUrl = coverCandidate;
+  } catch {}
+
+  // Single API call that returns the work's first_publish_year if available
+  try {
+    const res = await fetch(`https://openlibrary.org/isbn/${isbn}.json`);
     if (res.ok) {
       const data = await res.json();
-      const entry = data[`ISBN:${isbn}`];
-      const works = entry?.details?.works;
-      if (works && works[0] && works[0].key) {
-        // Fetch the work for first_publish_date
-        const workRes = await fetch(`https://openlibrary.org${works[0].key}.json`);
-        if (workRes.ok) {
-          const workData = await workRes.json();
-          year = extractYear(workData.first_publish_date);
-        }
+      // Try edition's publish_date first
+      let yearStr = data.publish_date;
+      // If we have a works reference, fetch first_publish_date
+      if (data.works && data.works[0] && data.works[0].key) {
+        try {
+          const workRes = await fetch(`https://openlibrary.org${data.works[0].key}.json`);
+          if (workRes.ok) {
+            const workData = await workRes.json();
+            if (workData.first_publish_date) {
+              yearStr = workData.first_publish_date;
+            }
+          }
+        } catch {}
       }
-      // Fallback to the edition's publish_date if we couldn't get the work
-      if (!year && entry?.details?.publish_date) {
-        year = extractYear(entry.details.publish_date);
-      }
+      year = extractYear(yearStr);
     }
   } catch {}
 
@@ -177,7 +187,7 @@ async function main() {
       console.log(`${i + 1}/${BOOKS.length} | new: ${newFetches} | cached: ${cached} | no-cover: ${missesCover} | no-year: ${missesYear}`);
     }
     // Pace ~3 requests/sec to allow multiple API calls per book
-    await sleep(300);
+    await sleep(800);
   }
 
   console.log(`\nFinal: ${newFetches} newly fetched, ${cached} from cache`);
