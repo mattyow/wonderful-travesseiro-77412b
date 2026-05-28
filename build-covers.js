@@ -81,7 +81,61 @@ async function openLibraryData(isbn) {
     const res = await fetch(coverCandidate, { method: 'HEAD' });
     if (res.ok) coverUrl = coverCandidate;
   } catch {}
+// Single API call that returns the work's first_publish_year if available
+  try {
+    const res = await fetch(`https://openlibrary.org/isbn/${isbn}.json`);
+    if (res.ok) {
+      const data = await res.json();
+      let yearStr = data.publish_date;
+      if (data.works && data.works[0] && data.works[0].key) {
+        try {
+          const workRes = await fetch(`https://openlibrary.org${data.works[0].key}.json`);
+          if (workRes.ok) {
+            const workData = await workRes.json();
+            if (workData.first_publish_date) {
+              yearStr = workData.first_publish_date;
+            }
+          }
+        } catch {}
+      }
+      year = extractYear(yearStr);
+    }
+  } catch {}
 
+  return { coverUrl, year };
+}
+
+async function findData(isbn) {
+  if (!isbn) return { coverUrl: null, year: null };
+
+  const cached = existingData[isbn] || {};
+  if (cached.coverUrl && cached.publicationYear) {
+    return { coverUrl: cached.coverUrl, year: cached.publicationYear };
+  }
+
+  let coverUrl = cached.coverUrl || null;
+  let year = cached.publicationYear || null;
+
+  // Always try Google Books first — its cover coverage is best.
+  if (!coverUrl || !year) {
+    const g = await googleBooksData(isbn);
+    if (!coverUrl && g.coverUrl) coverUrl = g.coverUrl;
+    if (!year && g.year) year = g.year;
+  }
+
+  // Open Library fills in: missing covers AND original publication year
+  if (!coverUrl || !year) {
+    const ol = await openLibraryData(isbn);
+    if (!coverUrl && ol.coverUrl) coverUrl = ol.coverUrl;
+    if (ol.year) year = ol.year;
+  }
+
+  return { coverUrl, year };
+}
+
+function sleep(ms) {
+  return new Promise(r => setTimeout(r, ms));
+}
 async function openLibraryData(isbn) {
   let coverUrl = null;
   let year = null;
