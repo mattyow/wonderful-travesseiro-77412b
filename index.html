@@ -844,7 +844,10 @@ main {
         <div class="modal-field-label">Motifs</div>
         <div id="modal-motifs" class="pill-list"></div>
       </div>
-
+      <div id="modal-year-wrap" class="modal-field" hidden>
+        <div class="modal-field-label">First published</div>
+        <div id="modal-year" class="modal-field-value"></div>
+      </div>
       <div id="modal-isbn-wrap" class="modal-field" hidden>
         <div class="modal-field-label">ISBN</div>
         <div id="modal-isbn" class="modal-field-value"></div>
@@ -878,6 +881,8 @@ main {
     const modalThemes = document.getElementById("modal-themes");
     const modalMotifsWrap = document.getElementById("modal-motifs-wrap");
     const modalMotifs = document.getElementById("modal-motifs");
+    const modalYearWrap = document.getElementById("modal-year-wrap");
+    const modalYear = document.getElementById("modal-year");
     const modalIsbnWrap = document.getElementById("modal-isbn-wrap");
     const modalIsbn = document.getElementById("modal-isbn");
 
@@ -1098,7 +1103,12 @@ async function openModal(book) {
       } else {
         modalMotifsWrap.hidden = true;
       }
-
+      if (book.publicationYear) {
+        modalYear.textContent = book.publicationYear;
+        modalYearWrap.hidden = false;
+      } else {
+        modalYearWrap.hidden = true;
+      }
       if (book.isbn) {
         modalIsbn.textContent = book.isbn;
         modalIsbnWrap.hidden = false;
