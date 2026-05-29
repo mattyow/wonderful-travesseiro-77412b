@@ -996,7 +996,7 @@ main {
       { rootMargin: "200px" }   // Start fetching 200px before entering view
     );
 
-    function renderCard(book) {
+function renderCard(book) {
       const card = document.createElement("button");
       card.className = "card";
       card.type = "button";
@@ -1014,8 +1014,21 @@ main {
       `;
       wrap.appendChild(placeholder);
 
-      // Only start observing if there's an ISBN to look up
-      if (book.isbn) coverObserver.observe(wrap);
+      // Use pre-fetched cover URL if available (from build-covers.js).
+      // Falls back to live API lookup only if no coverUrl is set.
+      if (book.coverUrl) {
+        const img = document.createElement("img");
+        img.src = book.coverUrl;
+        img.alt = book.title;
+        img.loading = "lazy";
+        img.decoding = "async";
+        img.style.position = "absolute";
+        img.style.inset = "0";
+        img.onerror = () => { img.remove(); };
+        wrap.appendChild(img);
+      } else if (book.isbn) {
+        coverObserver.observe(wrap);
+      }
 
       const meta = document.createElement("div");
       meta.className = "meta";
