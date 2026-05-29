@@ -1077,7 +1077,7 @@ function filterFromModal(type, value) {
     }
 
 async function openModal(book) {
-      const url = await findCover(book.isbn);
+      const url = book.coverUrl || (await findCover(book.isbn));
       if (url) {
         modalCover.src = url;
         modalCover.alt = book.title;
