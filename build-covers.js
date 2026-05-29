@@ -173,40 +173,7 @@ async function openLibraryData(isbn) {
   return { coverUrl, year };
 }
 
-async function findData(isbn) {
-  if (!isbn) return { coverUrl: null, year: null };
 
-  // Prefer Open Library for the YEAR (because it has first_publish_date),
-  // and Google Books for the COVER (better quality).
-  // We may need both APIs for a complete picture.
-
-  const cached = existingData[isbn] || {};
-
-  // If we have cached data with BOTH fields, skip the API entirely
-  if (cached.coverUrl && cached.publicationYear) {
-    return { coverUrl: cached.coverUrl, year: cached.publicationYear };
-  }
-
-  let coverUrl = cached.coverUrl || null;
-  let year = cached.publicationYear || null;
-
-  // Try Open Library first for the year (and as a cover fallback)
-  if (!year || !coverUrl) {
-    const ol = await openLibraryData(isbn);
-    if (!year && ol.year) year = ol.year;
-    if (!coverUrl && ol.coverUrl) coverUrl = ol.coverUrl;
-  }
-
-  // Use Google Books for the cover (preferred) and year fallback
-  if (!coverUrl || !year) {
-    const g = await googleBooksData(isbn);
-    // Always prefer Google's cover if we don't have one yet
-    if (!coverUrl && g.coverUrl) coverUrl = g.coverUrl;
-    if (!year && g.year) year = g.year;
-  }
-
-  return { coverUrl, year };
-}
 
 function sleep(ms) {
   return new Promise(r => setTimeout(r, ms));

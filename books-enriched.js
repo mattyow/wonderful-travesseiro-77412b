@@ -1583,6 +1583,7 @@ const BOOKS = [
       "Library as ark",
       "Hope in catastrophe"
     ],
+    "coverUrl": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1618589128i/56783258.jpg",
     "publicationYear": 2021
   },
   {
@@ -2591,9 +2592,12 @@ const BOOKS = [
   {
     "title": "Firekeeper’s Daughter",
     "author": "Angeline Boulley",
+    "isbn": "9781250766564",
     "genres": [
       "Fiction"
-    ]
+    ],
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9781250766564-L.jpg?default=false",
+    "publicationYear": 2021
   },
   {
     "title": "Florida",
@@ -5122,6 +5126,7 @@ const BOOKS = [
   {
     "title": "Palaces of the Crow",
     "author": "Ray Nayler",
+    "isbn": "9780374620752",
     "genres": [
       "Fiction"
     ]
@@ -5947,6 +5952,7 @@ const BOOKS = [
   {
     "title": "Sisters in the Wind",
     "author": "Angeline Boulley",
+    "isbn": "9781250328533",
     "genres": [
       "Fiction"
     ]
@@ -9829,7 +9835,8 @@ const BOOKS = [
     "themes": [
       "Independent fiction",
       "Philosophical narrative"
-    ]
+    ],
+    "coverUrl": "https://m.media-amazon.com/images/I/81kFOR4yCAL._SY522_.jpg"
   },
   {
     "title": "Thus Were Their Faces: Selected Stories",
@@ -9991,9 +9998,11 @@ const BOOKS = [
     "title": "Tokyo Express",
     "author": "Seichō Matsumoto",
     "additionalAuthors": "Jesse Kirkwood",
+    "isbn": "9780593979044",
     "genres": [
       "Fiction"
-    ]
+    ],
+    "publicationYear": 2025
   },
   {
     "title": "Tokyo Ueno Station",
@@ -10382,9 +10391,12 @@ const BOOKS = [
   {
     "title": "Warrior Girl Unearthed",
     "author": "Angeline Boulley",
+    "isbn": "9781250766588",
     "genres": [
       "Fiction"
-    ]
+    ],
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9781250766588-L.jpg?default=false",
+    "publicationYear": 2023
   },
   {
     "title": "Washington: The Indispensable Man",

@@ -8816,6 +8816,7 @@ const BOOKS = [
     "title": "Three Shakes Up",
     "author": "Bo Oxley",
     "isbn": "9798581555309",
+    "manualCoverUrl": "https://m.media-amazon.com/images/I/81kFOR4yCAL._SY522_.jpg",
     "genres": [
       "Literary fiction",
       "Philosophy"
