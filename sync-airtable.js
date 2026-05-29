@@ -114,6 +114,9 @@ async function main() {
 
     if (isbn) book.isbn = isbn;
 
+const manualCover = (f['Cover URL'] || '').trim();
+    if (manualCover) book.manualCoverUrl = manualCover;
+
     // Preserve enriched metadata if we have it for this ISBN
     const meta = existingMeta[isbn];
     if (meta) {

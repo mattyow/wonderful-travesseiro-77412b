@@ -219,10 +219,24 @@ async function main() {
     const book = BOOKS[i];
     if (!book.isbn) { missesCover++; missesYear++; continue; }
 
-    const existing = existingData[book.isbn];
-    const hasCachedFully = existing && existing.coverUrl && existing.publicationYear;
+// Manual override from Airtable Cover URL field always wins
+    const manualUrl = book.manualCoverUrl;
+    if (manualUrl) {
+      book.coverUrl = manualUrl;
+      delete book.manualCoverUrl;
+    }
 
-    if (hasCachedFully) {
+    const existing = existingData[book.isbn];
+
+    // If we already have everything we need (cover + year), skip API
+    if (book.coverUrl && existing && existing.publicationYear) {
+      book.publicationYear = existing.publicationYear;
+      cached++;
+      continue;
+    }
+
+    // Standard cached path (no manual override)
+    if (!manualUrl && existing && existing.coverUrl && existing.publicationYear) {
       book.coverUrl = existing.coverUrl;
       book.publicationYear = existing.publicationYear;
       cached++;

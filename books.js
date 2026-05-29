@@ -1412,6 +1412,7 @@ const BOOKS = [
     "title": "Cloud Cuckoo Land",
     "author": "Anthony Doerr",
     "isbn": "9781982168445",
+    "manualCoverUrl": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1618589128i/56783258.jpg",
     "genres": [
       "Literary fiction"
     ],
@@ -2327,6 +2328,7 @@ const BOOKS = [
   {
     "title": "Firekeeper’s Daughter",
     "author": "Angeline Boulley",
+    "isbn": "9781250766564",
     "genres": [
       "Fiction"
     ]
@@ -4600,6 +4602,7 @@ const BOOKS = [
   {
     "title": "Palaces of the Crow",
     "author": "Ray Nayler",
+    "isbn": "9780374620752",
     "genres": [
       "Fiction"
     ]
@@ -5343,6 +5346,7 @@ const BOOKS = [
   {
     "title": "Sisters in the Wind",
     "author": "Angeline Boulley",
+    "isbn": "9781250328533",
     "genres": [
       "Fiction"
     ]
@@ -8964,6 +8968,7 @@ const BOOKS = [
     "title": "Tokyo Express",
     "author": "Seichō Matsumoto",
     "additionalAuthors": "Jesse Kirkwood",
+    "isbn": "9780593979044",
     "genres": [
       "Fiction"
     ]
@@ -9313,6 +9318,7 @@ const BOOKS = [
   {
     "title": "Warrior Girl Unearthed",
     "author": "Angeline Boulley",
+    "isbn": "9781250766588",
     "genres": [
       "Fiction"
     ]
