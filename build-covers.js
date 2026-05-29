@@ -123,11 +123,22 @@ async function findData(isbn) {
     if (!year && g.year) year = g.year;
   }
 
-  // Open Library fills in: missing covers AND original publication year
+// Open Library fills in: missing covers AND original publication year
   if (!coverUrl || !year) {
     const ol = await openLibraryData(isbn);
     if (!coverUrl && ol.coverUrl) coverUrl = ol.coverUrl;
     if (ol.year) year = ol.year;
+  }
+
+  // Bookshop.org as last-resort cover fallback (predictable URL pattern)
+  if (!coverUrl) {
+    const bookshopUrl = `https://images-us.bookshop.org/ingram/${isbn}.jpg`;
+    try {
+      const res = await fetch(bookshopUrl, { method: 'HEAD' });
+      if (res.ok && res.headers.get('content-type')?.startsWith('image/')) {
+        coverUrl = bookshopUrl;
+      }
+    } catch {}
   }
 
   return { coverUrl, year };
