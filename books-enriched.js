@@ -1820,7 +1820,8 @@ const BOOKS = [
       "The food of legend",
       "Times braided together",
       "Pursuit of a vanished taste"
-    ]
+    ],
+    "coverUrl": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1353094385i/16153346.jpg"
   },
   {
     "title": "Crystal Eaters",
@@ -2842,6 +2843,7 @@ const BOOKS = [
       "Mythic geography",
       "Memory and amnesia"
     ],
+    "coverUrl": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1362178868i/845746.jpg",
     "publicationYear": 1990
   },
   {
@@ -2961,6 +2963,7 @@ const BOOKS = [
       "Production craft",
       "Media literacy"
     ],
+    "coverUrl": "https://i.ebayimg.com/images/g/fg8AAOSwJYplRlzs/s-l1600.webp",
     "publicationYear": 1978
   },
   {
@@ -6007,7 +6010,8 @@ const BOOKS = [
     "title": "Sir Gawain and the Green Knight",
     "author": "",
     "additionalAuthors": "Marie Borroff",
-    "isbn": "393097544"
+    "isbn": "393097544",
+    "coverUrl": "https://thehauntedbookshop.cdn.bibliopolis.com/pictures/039028.jpg?width=768&height=1000&fit=bounds&auto=webp&v=1644972778"
   },
   {
     "title": "Sisters in the Wind",
@@ -6660,7 +6664,8 @@ const BOOKS = [
       "Type design practice",
       "Letter craft",
       "Klim foundry"
-    ]
+    ],
+    "coverUrl": "https://i0.wp.com/archbooks.com.tw/wp-content/uploads/2022/03/9780648596349.jpg?fit=357%2C500&ssl=1"
   },
   {
     "title": "The Association of Small Bombs",
@@ -7230,6 +7235,7 @@ const BOOKS = [
       "Crisis of art",
       "Cultural fragmentation"
     ],
+    "coverUrl": "https://m.media-amazon.com/images/I/91WySRJi4jL._SY522_.jpg",
     "publicationYear": 1968
   },
   {
@@ -9710,6 +9716,7 @@ const BOOKS = [
       "Cyclic time",
       "Pre-Tolkien high fantasy"
     ],
+    "coverUrl": "https://upload.wikimedia.org/wikipedia/en/3/38/The_Worm_Ouroboros_book_cover.jpg",
     "publicationYear": 2016
   },
   {

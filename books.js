@@ -1613,6 +1613,7 @@ const BOOKS = [
     "title": "Crandolin",
     "author": "Anna Tambour",
     "isbn": "9781907681196",
+    "manualCoverUrl": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1353094385i/16153346.jpg",
     "genres": [
       "Literary fiction",
       "Magical realism",
@@ -2523,6 +2524,7 @@ const BOOKS = [
     "title": "Gog",
     "author": "Andrew Sinclair",
     "isbn": "9780340486085",
+    "manualCoverUrl": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1362178868i/845746.jpg",
     "genres": [
       "Literary fiction",
       "Picaresque"
@@ -2629,6 +2631,7 @@ const BOOKS = [
     "title": "Handbook for Preparing Visual Media",
     "author": "Ed Minor",
     "isbn": "9780070424074",
+    "manualCoverUrl": "https://i.ebayimg.com/images/g/fg8AAOSwJYplRlzs/s-l1600.webp",
     "genres": [
       "Design",
       "Reference",
@@ -5350,7 +5353,8 @@ const BOOKS = [
     "title": "Sir Gawain and the Green Knight",
     "author": "",
     "additionalAuthors": "Marie Borroff",
-    "isbn": "393097544"
+    "isbn": "393097544",
+    "manualCoverUrl": "https://thehauntedbookshop.cdn.bibliopolis.com/pictures/039028.jpg?width=768&height=1000&fit=bounds&auto=webp&v=1644972778"
   },
   {
     "title": "Sisters in the Wind",
@@ -5925,6 +5929,7 @@ const BOOKS = [
     "author": "Kris Sowersby",
     "additionalAuthors": "Mark Gowing",
     "isbn": "9780648596349",
+    "manualCoverUrl": "https://i0.wp.com/archbooks.com.tw/wp-content/uploads/2022/03/9780648596349.jpg?fit=357%2C500&ssl=1",
     "genres": [
       "Design",
       "Typography",
@@ -6435,6 +6440,7 @@ const BOOKS = [
     "title": "The Disintegration of Form in the Arts",
     "author": "Erich von Kahler",
     "isbn": "9780807604410",
+    "manualCoverUrl": "https://m.media-amazon.com/images/I/91WySRJi4jL._SY522_.jpg",
     "genres": [
       "Philosophy",
       "Art criticism",
@@ -8634,6 +8640,7 @@ const BOOKS = [
     "title": "The Worm Ouroboros",
     "author": "E.R. Eddison",
     "isbn": "9781539542933",
+    "manualCoverUrl": "https://upload.wikimedia.org/wikipedia/en/3/38/The_Worm_Ouroboros_book_cover.jpg",
     "genres": [
       "Fantasy",
       "Classics"
