@@ -1,145 +1,54 @@
-Total without coverUrl: 144
-  33⅓: Metallica | David Masciotra | ISBN: 9781628929300
-  33⅓: Reign In Blood | D. X. Ferris | ISBN: 9780826429094
-  A Better Brand: A Guide to Creating and Evolving Brands | Scott Lerman | ISBN: 9781440331435
+Total without coverUrl: 53
   A Hologram for the King | Dave Eggers | ISBN: 9780241145852
-  A Million Little Pieces | James Frey | ISBN: 9781565117785
   A Voyage to Arcturus | David  Lindsay | ISBN: 9780345232083
   ABC of Relativity | Bertrand Russell | ISBN: 9780045210022
-  Absolution | Jeff VanderMeer | ISBN: 9780374616595
   African Folk Tales | Charlotte Leslau | ISBN: 9781299307513
-  Ahab’s Return | Jeffrey Ford | ISBN: 9780062679000
-  American Wood Type: 1828–1900: Notes on the Evolution of Decorated and Large Types | Rob Roy Kelly | ISBN: 9780978588175
-  Art and Faith | Makoto Fujimura | ISBN: 9780300254143
-  Bernini in Rome: Gian Lorenzo Bernini and the Baroque in Rome | Paul den Arend | ISBN: 9781514708712
-  Big Hair and Plastic Grass: A Funky Ride Through Baseball and America in the Swinging '70s | Dan Epstein | ISBN: 9781250007247
   Boy in Darkness and Other Stories | Mervyn Peake | ISBN: 9780720613063
-  Bug | Giancomo Sartori | ISBN: 9781632062741
   Children of Gebelawi | Naguib Mahfouz | ISBN: 9780894106546
-  Coffee Drinks | Merlin Jobst | ISBN: 9781912983575
-  Concerning the Spiritual in Art | Wassily Kandinsky | ISBN: 9780241384800
-  Contradict: They Can’t All Be True | Andy Wrasman | ISBN: 9781490819297
-  Counternarratives | John Keene | ISBN: 9780811225526
   Crandolin | Anna Tambour | ISBN: 9781907681196
-  Culture Making: Recovering Our Creative Calling | Andy Crouch | ISBN: 9780830837557
   Culture, Language, and Personality | Edward Sapir | ISBN: 9780520011168
-  Deeper Into Pictures: An Essay on Pictorial Representation | Flint Schier | ISBN: 9780521109406
-  Dictionary Stories: Short Fictions and Other Findings | Jez Burrows | ISBN: 9780062652614
   Don’t Call it That | Eli Altman | ISBN: 9781734248302
-  Down Below | Leonora Carrington | ISBN: 9781681370606
   Earwig | Brian Catling | ISBN: 9781473687103
-  Emotional Branding: The New Paradigm for Connecting Brands to People | Marc Gobe | ISBN: 9781581156720
   Ethics | Michael Cisco | ISBN: 9798808549395
-  Fat Time | Jeffery Renard Allen | ISBN: 9781644452394
   Father Brown Crime Stories: Twenty Four Short Mysteries | G.K. Chesterton | ISBN: 9780517001820
-  Florida | Lauren Groff | ISBN: 9781594634512
-  Friday Black | Nana Kwame Adjei-Brenyah | ISBN: 9781328911247
-  Germs: A Memoir of Childhood | Richard Wollheim | ISBN: 9781681374963
   Gog | Andrew Sinclair | ISBN: 9780340486085
-  Gormenghast | Mervyn Peake | ISBN: 9780786198009
-  Groundwork of the Metaphysic of Morals | Immanuel Kant | ISBN: 9780061766312
   Half Gods | Akil Kumarasamy | ISBN: 9780374167677
   Handbook for Preparing Visual Media | Ed Minor | ISBN: 9780070424074
-  Hip-Hop is History | Questlove | ISBN: 9781250390547
   Homage to the Alphabet: Typeface Sourcebook | Rockport Publishers | ISBN: 9780935603477
-  How to Live with Objects | Monica Khemsurov | ISBN: 9780593235041
   Hum | Helen Phillips | ISBN: 9781668008831
-  I love it. What is it?: The power of instinct in design and branding | Gyles Lingwood | ISBN: 9781838666064
   Identify: Basic Principles of Identity Design in the Iconic Trademarks of Chermayeff  Geismar | Ivan Chermayeff, Sagi Haviv, Tom Geismar | ISBN: 9781440310324
-  Ingrained: The Making of a Craftsman | Callum Robinson | ISBN: 9780063350830
-  Inventing the Renaissance: The Myth of a Golden Age | Ada Palmer | ISBN: 9780226837970
-  Jonathan Strange & Mr. Norrell | Susanna Clarke | ISBN: 9781635576726
-  Just My Type: A Book About Fonts | Simon Garfield | ISBN: 9781592407460
-  Kaleidoscope: Modern Homes in Every Colour | Amy Moorea Wong | ISBN: 9781784885465
   Komodo | Jeff VanderMeer | ISBN: NONE
-  Lapidarium: The Secret Lives of Stones | Hettie Judah | ISBN: 9780143137412
   Learning to Look: A Handbook for the Visual Arts | Joshua C. Taylor | ISBN: 9780226791494
-  Letter Fountain | Joep Pohlen | ISBN: 9783836525091
-  Leviathan | Thomas Hobbes | ISBN: 9781619491700
-  Like a Thief in Broad Daylight: Power in the Era of Post-Capitalism | Slovaj Žižek | ISBN: 9781609809751
   LogoLounge 7 | Bill Gardner | ISBN: 9781592537273
   LogoLounge 8 | Bill Gardner | ISBN: 9781592538348
   Manuals 1: Design & Identity Guidelines | Adrian Shaughnessy | ISBN: 9780957511446
-  Martha’s Daughter | David Haynes | ISBN: 9781963270273
   Member | Michael Cisco | ISBN: 9781907681233
-  Mercury Pictures Presents | Anthony Marra | ISBN: 9780451495211
-  Mina’s Matchbook | Yōko Ogawa | ISBN: 9780593313411
-  Moderan | David R. Bunch | ISBN: 9781681372549
-  Monstrilio | Gerard Sámano Córdova | ISBN: 9781638931607
-  New People | Danzy Senna | ISBN: 9780399573149
-  On Michael Jackson | Margo Jefferson | ISBN: 9780307277657
-  One’s Company | Ashley Hutson | ISBN: 9780393866643
   Only the Lowly | Brian Catling | ISBN: 9781916041103
-  Palaces of the Crow | Ray Nayler | ISBN: 9780374620752
   Paul Rand: A Designer’s Art | Paul Rand | ISBN: 9781616894863
-  Perspective(s): A Novel | Laurent Binet | ISBN: 9780374614607
-  Pest | Michael Cisco | ISBN: 9781955904308
   Pictos | Index Book | ISBN: 9788415308362
   Point B | Drew Magary | ISBN: 9798637737680
-  Revenge | Yōko Ogawa | ISBN: 9781250375988
-  Seasons of Glass and Iron | Amal El-Mohtar | ISBN: 9781250341006
-  Semiotic Animal: A Postmodern Definition of “Human Being” Transcending Patriarchy and Feminism | John Deely | ISBN: 9781587317583
   Semiotics and Interpretation | Robert Scholes | ISBN: 9780300160932
-  Seven Empty Houses | Samanta Schweblin | ISBN: 9780525541400
-  Seventy-nine Short Essays on Design | Michael Bierut | ISBN: 9781616890612
   Sign, Language, and Behavior | Charles Morris | ISBN: 9780807600207
   Sir Gawain and the Green Knight |  | ISBN: 393097544
-  Sisters in the Wind | Angeline Boulley | ISBN: 9781250328533
   Speaker and the Hataka | Trenton Anthony | ISBN: 9798838393159
   Speaker of Ma’ila | Trenton Anthony | ISBN: 9798671945836
   Speakers of Elor | Trenton Anthony | ISBN: 9798507120475
   Structuralism & Semiotics | Terence Hawkes | ISBN: 9780416796209
-  Swamplandia! | Karen Russell | ISBN: 9780307276681
-  Symbols: A Handbook for Seeing | Mark Fox, Angie Wang | ISBN: 9781580934725
-  Tell Them of Battles, Kings, and Elephants | Mathias Énard | ISBN: 9780811228947
-  The Abstainer | Ian McGuire | ISBN: 9780593133873
-  The Accusation: Forbidden Stories from Inside North Korea | Bandi | ISBN: 9780802126207
   The Art of Letters | Kris Sowersby | ISBN: 9780648596349
-  The Association of Small Bombs | Karan Mahajan | ISBN: 9780143109273
-  The Beauty of Everyday Things | Soetsu Tanagi | ISBN: 9780241366356
   The Boats of the “Glen Carrig” | William Hope Hodgson | ISBN: 9781519623812
-  The Cloven  (The Vorrh Trilogy, #3) | Brian Catling | ISBN: 9781101972748
   The Complete Tales of Edgar Allan Poe | Edgar Allan Poe | ISBN: 9780760716212
   The Confidence-Man | Herman Melville | ISBN: 9780451516985
   The Death of Ivan Ilych | Leo Tolstoy | ISBN: 9780451514851
   The Devourers | Indra Das | ISBN: 9781101967515
-  The Diary of a Young Girl | Anne Frank | ISBN: 9780812415087
   The Disintegration of Form in the Arts | Erich von Kahler | ISBN: 9780807604410
-  The Employees | Olga Ravn | ISBN: 9780811234825
   The End of All Songs (Dancers at the End of Time, #3) | Michael Moorcock | ISBN: 9780060129996
-  The Erstwhile (The Vorrh Trilogy, #2) | Brian Catling | ISBN: 9781101972724
-  The Golden Legend: Readings on the Saints | Jacobus de Voragine | ISBN: 9780691154077
-  The Hidden Histories of Flowers | Maddie & Alice Bailey | ISBN: 9781784886745
-  The Infinite Sadness of Small Appliances | Glenn Dixon | ISBN: 9781668097267
-  The Interestings | Meg Wolitzer | ISBN: 9781594632341
   The King in Yellow | Robert W. Chambers | ISBN: 9781537514932
-  The Kingdom of Speech | Tom Wolfe | ISBN: 9780316404631
-  The North Water | Ian McGuire | ISBN: 9781250118141
-  The Obscene Bird of Night | José Donoso | ISBN: 9780811232227
   The Princess and the Goblin | George MacDonald | ISBN: 9781516936717
   The Screwtape Letters | C.S. Lewis | ISBN: 9781557481429
   The Secret of Father Brown | G.K. Chesterton | ISBN: 9780140038071
-  The Seventy Wonders of the Ancient World | Edited by Chris Scarre | ISBN: 9780500297070
-  The Staircase in the Woods | Chuck Wendig | ISBN: 9780593156582
-  The System of Objects | Jean Baudrillard | ISBN: 9781788738545
-  The Taiga Syndrome | Cristina Rivera Garza | ISBN: 9780997366679
-  The Tusks of Extinction | Ray Nayler | ISBN: 9781250855527
-  The Wayfinder | Adam Johnson | ISBN: 9780374619572
-  The World Atlas of Coffee | James Hofffmann | ISBN: 9780228100942
   The Worm Ouroboros | E.R. Eddison | ISBN: 9781539542933
   The Wounds of the Dead | Vikram Paralkar | ISBN: 9789352774371
-  They Flew: A History of the Impossible | Carlos Eire | ISBN: 9780300259803
-  This World is Full of Monsters | Jeff VanderMeer | ISBN: 9781250165718
   Till We Have Faces: A Myth Retold | C.S. Lewis | ISBN: 9780756972226
-  Tokyo Express | Seichō Matsumoto | ISBN: 9780593979044
   Tolkien: A Look Behind the Lord of the Rings | Lin Carter | ISBN: 9780345245205
-  Tremendous Trifles | G. K. Chesterton | ISBN: 9781507864326
-  Under the Sea | Mark Leidner | ISBN: 9780991360888
-  Universal Principles of Branding: 100 Key Concepts for Defining, Building, and Delivering Brands | Mark Kingsley | ISBN: 9780760378205
-  Welcome as a Way of Life | Benjamin Wall | ISBN: 9781498225687
-  When Trees Testify | Beronda L. Montgomery | ISBN: 9781250335166
-  Where the Axe is Buried | Ray Nayler | ISBN: 9780374615369
-  Witches | Brenda Lozano | ISBN: 9781646221998
   Wolf in White Van | John Darnielle | ISBN: 9781250081223
   Works of Charles Sanders Peirce | Charles Sanders Peirce | ISBN: NONE
-  Writings on Media: History of the Present | Stuart Hall | ISBN: 9781478014713

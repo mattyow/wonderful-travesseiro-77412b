@@ -81,6 +81,7 @@ const BOOKS = [
       "Metal goes mainstream",
       "Track-by-track"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9781628929300.jpg",
     "publicationYear": 2015
   },
   {
@@ -96,6 +97,7 @@ const BOOKS = [
       "Thrash metal craft",
       "Track-by-track devotion"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9780826429094.jpg",
     "publicationYear": 2008
   },
   {
@@ -112,6 +114,7 @@ const BOOKS = [
       "Identity evolution",
       "Design process"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9781440331435.jpg",
     "publicationYear": 2013
   },
   {
@@ -310,7 +313,8 @@ const BOOKS = [
       "Addiction and recovery",
       "Rehab",
       "Truth and embellishment"
-    ]
+    ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9781565117785.jpg"
   },
   {
     "title": "A Natural History of Hell: Stories",
@@ -495,6 +499,7 @@ const BOOKS = [
       "Gnostic vision",
       "Strange worlds as moral test"
     ],
+    "coverUrl": "https://m.media-amazon.com/images/I/719hx21w3eL._AC_UF1000,1000_QL80_.jpg",
     "publicationYear": 1968
   },
   {
@@ -527,7 +532,8 @@ const BOOKS = [
       "Southern Reach return",
       "Forbidden coast",
       "Buried beginnings"
-    ]
+    ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9780374616595.jpg"
   },
   {
     "title": "Acceptance (Southern Reach, #3)",
@@ -593,6 +599,7 @@ const BOOKS = [
       "Penny-press New York",
       "Strange creatures in the city"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9780062679000.jpg",
     "publicationYear": 2019
   },
   {
@@ -731,6 +738,7 @@ const BOOKS = [
       "19th-century printing",
       "Decorative letterforms"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9780978588175.jpg",
     "publicationYear": 2010
   },
   {
@@ -888,6 +896,7 @@ const BOOKS = [
       "Christian creativity",
       "Nihonga and faith"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9780300254143.jpg",
     "publicationYear": 2021
   },
   {
@@ -1074,7 +1083,8 @@ const BOOKS = [
       "Roman Baroque",
       "Sculpture and architecture",
       "Patronage and the papacy"
-    ]
+    ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9781514708712.jpg"
   },
   {
     "title": "Between The World and Me",
@@ -1108,6 +1118,7 @@ const BOOKS = [
       "Hairstyles and Astroturf",
       "America in the disco era"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9781250007247.jpg",
     "publicationYear": 2012
   },
   {
@@ -1247,6 +1258,7 @@ const BOOKS = [
       "Outsiders",
       "Dreamlike worlds"
     ],
+    "coverUrl": "https://m.media-amazon.com/images/I/81xtUgB4nYL._SL1500_.jpg",
     "publicationYear": 2007
   },
   {
@@ -1349,6 +1361,7 @@ const BOOKS = [
       "Voice of a machine",
       "Domestic comedy"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9781632062741.jpg",
     "publicationYear": 2021
   },
   {
@@ -1600,6 +1613,7 @@ const BOOKS = [
       "Espresso and milk",
       "Modern coffee culture"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9781912983575.jpg",
     "publicationYear": 2022
   },
   {
@@ -1703,6 +1717,7 @@ const BOOKS = [
       "Color as inner sound",
       "Modern art's mission"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9780241384800.jpg",
     "publicationYear": 2022
   },
   {
@@ -1738,6 +1753,7 @@ const BOOKS = [
       "Christian apologetics",
       "Truth claims"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9781490819297.jpg",
     "publicationYear": 2014
   },
   {
@@ -1754,6 +1770,7 @@ const BOOKS = [
       "Black lives in colonial archives",
       "Formal experimentation"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9780811225526.jpg",
     "publicationYear": 2016
   },
   {
@@ -1852,6 +1869,7 @@ const BOOKS = [
       "Making over critiquing",
       "Calling and creativity"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9780830837557.jpg",
     "publicationYear": 2008
   },
   {
@@ -2004,6 +2022,7 @@ const BOOKS = [
       "Resemblance",
       "Perception and image"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9780521109406.jpg",
     "publicationYear": 2009
   },
   {
@@ -2122,6 +2141,7 @@ const BOOKS = [
       "Tiny narratives",
       "Dictionary as raw material"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9780062652614.jpg",
     "publicationYear": 2018
   },
   {
@@ -2271,6 +2291,7 @@ const BOOKS = [
       "Asylum in Spain",
       "Visionary recovery"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9781681370606.jpg",
     "publicationYear": 2017
   },
   {
@@ -2339,6 +2360,7 @@ const BOOKS = [
       "Body and disquiet",
       "Postwar Europe"
     ],
+    "coverUrl": "https://m.media-amazon.com/images/I/A1hasKGUCML._SY522_.jpg",
     "publicationYear": 2019
   },
   {
@@ -2389,6 +2411,7 @@ const BOOKS = [
       "Brand experience",
       "Consumer psychology"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9781581156720.jpg",
     "publicationYear": 2009
   },
   {
@@ -2552,6 +2575,7 @@ const BOOKS = [
       "Speculative encounters",
       "Music and time"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9781644452394.jpg",
     "publicationYear": 2023
   },
   {
@@ -2568,6 +2592,7 @@ const BOOKS = [
       "Paradox and crime",
       "The priest as investigator"
     ],
+    "coverUrl": "https://m.media-amazon.com/images/I/71wPd8LtYHL._SY522_.jpg",
     "publicationYear": 1990
   },
   {
@@ -2613,6 +2638,7 @@ const BOOKS = [
       "Heat and weather",
       "Place as character"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9781594634512.jpg",
     "publicationYear": 2018
   },
   {
@@ -2696,6 +2722,7 @@ const BOOKS = [
       "Satirical horror",
       "Black survival"
     ],
+    "coverUrl": "https://i5.walmartimages.com/seo/Friday-Black-Paperback_d2e50fa6-bf2e-4cd0-8166-9cc30d2bd84f.905b5e4c5a5f7e76eab7252f32aed6f7.jpeg?odnHeight=573&odnWidth=573&odnBg=FFFFFF",
     "publicationYear": 2018
   },
   {
@@ -2747,6 +2774,7 @@ const BOOKS = [
       "Philosopher's interior life",
       "Memory and family"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9781681374963.jpg",
     "publicationYear": 2021
   },
   {
@@ -2830,6 +2858,7 @@ const BOOKS = [
       "The weight of tradition",
       "Outsider as threat"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9780786198009.jpg",
     "publicationYear": 1967
   },
   {
@@ -2899,6 +2928,7 @@ const BOOKS = [
       "Moral autonomy",
       "Universal law"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9780061766312.jpg",
     "publicationYear": 2014
   },
   {
@@ -3016,6 +3046,7 @@ const BOOKS = [
       "Musical lineage",
       "Cultural memory"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9781250390547.jpg",
     "publicationYear": 2025
   },
   {
@@ -3116,6 +3147,7 @@ const BOOKS = [
       "Curation at home",
       "Sight Unseen sensibility"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9780593235041.jpg",
     "publicationYear": 2022
   },
   {
@@ -3174,6 +3206,7 @@ const BOOKS = [
       "Client communication",
       "Branding craft"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9781838666064.jpg",
     "publicationYear": 2024
   },
   {
@@ -3346,6 +3379,7 @@ const BOOKS = [
       "Father and son in the workshop",
       "Slow craft"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9780063350830.jpg",
     "publicationYear": 2024
   },
   {
@@ -3378,6 +3412,7 @@ const BOOKS = [
       "How myths of progress form",
       "Florentine reality vs. legend"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9780226837970.jpg",
     "publicationYear": 2025
   },
   {
@@ -3458,6 +3493,7 @@ const BOOKS = [
       "Faerie",
       "Footnoted mythos"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9781635576726.jpg",
     "publicationYear": 2020
   },
   {
@@ -3492,6 +3528,7 @@ const BOOKS = [
       "Type personalities",
       "Everyday typography"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9781592407460.jpg",
     "publicationYear": 2012
   },
   {
@@ -3524,11 +3561,13 @@ const BOOKS = [
       "Modern interiors",
       "Visual courage"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9781784885465.jpg",
     "publicationYear": 2023
   },
   {
     "title": "Komodo",
     "author": "Jeff VanderMeer",
+    "manualCoverUrl": "https://m.media-amazon.com/images/I/51-7f9OyE1L._SX342_SY445_QL70_FMwebp_.jpg",
     "genres": [
       "Fiction"
     ]
@@ -3598,6 +3637,7 @@ const BOOKS = [
       "Geology and meaning",
       "Material culture"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9780143137412.jpg",
     "publicationYear": 2022
   },
   {
@@ -3698,6 +3738,7 @@ const BOOKS = [
       "Type classification",
       "Historical typography"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9783836525091.jpg",
     "publicationYear": 2011
   },
   {
@@ -3733,6 +3774,7 @@ const BOOKS = [
       "Human nature",
       "Order vs. chaos"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9781619491700.jpg",
     "publicationYear": 2013
   },
   {
@@ -3816,6 +3858,7 @@ const BOOKS = [
       "Power as theft",
       "Žižekian provocation"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9781609809751.jpg",
     "publicationYear": 2019
   },
   {
@@ -4227,7 +4270,8 @@ const BOOKS = [
       "Black middle-class lives",
       "Mothers and daughters",
       "Midwestern family"
-    ]
+    ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9781963270273.jpg"
   },
   {
     "title": "Martyr!",
@@ -4293,7 +4337,8 @@ const BOOKS = [
       "Belonging and inclusion",
       "Estranged perception",
       "Bureaucratic strangeness"
-    ]
+    ],
+    "coverUrl": "https://m.media-amazon.com/images/I/41U0fF8q3lL._SY445_SX342_FMwebp_.jpg"
   },
   {
     "title": "Mercury Pictures Presents",
@@ -4309,6 +4354,7 @@ const BOOKS = [
       "Wartime propaganda",
       "Family and exile"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9780451495211.jpg",
     "publicationYear": 2023
   },
   {
@@ -4375,7 +4421,8 @@ const BOOKS = [
       "Family eccentricity",
       "Japanese childhood remembered",
       "Matchbook collections"
-    ]
+    ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9780593313411.jpg"
   },
   {
     "title": "Moby-Dick or, The Whale",
@@ -4427,6 +4474,7 @@ const BOOKS = [
       "Posthuman bleakness",
       "Ecological ruin"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9781681372549.jpg",
     "publicationYear": 2018
   },
   {
@@ -4442,6 +4490,7 @@ const BOOKS = [
       "Mothering the monstrous",
       "Family across borders"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9781638931607.jpg",
     "publicationYear": 2024
   },
   {
@@ -4612,7 +4661,7 @@ const BOOKS = [
       "Semiotics of culture",
       "The everyday decoded"
     ],
-    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780374521509-L.jpg?default=false",
+    "coverUrl": "https://m.media-amazon.com/images/I/51wYiPr-03L._SL1500_.jpg",
     "publicationYear": 1957
   },
   {
@@ -4696,6 +4745,7 @@ const BOOKS = [
       "Romantic obsession",
       "Performing authenticity"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9780399573149.jpg",
     "publicationYear": 2018
   },
   {
@@ -4916,6 +4966,7 @@ const BOOKS = [
       "The pop genius",
       "Critical reckoning"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9780307277657.jpg",
     "publicationYear": 2007
   },
   {
@@ -5003,6 +5054,7 @@ const BOOKS = [
       "Trauma and refuge",
       "Three's Company obsession"
     ],
+    "coverUrl": "https://m.media-amazon.com/images/I/A1oVyfJCd0L._SY522_.jpg",
     "publicationYear": 2022
   },
   {
@@ -5129,7 +5181,8 @@ const BOOKS = [
     "isbn": "9780374620752",
     "genres": [
       "Fiction"
-    ]
+    ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9780374620752.jpg"
   },
   {
     "title": "Pale Fire",
@@ -5214,7 +5267,8 @@ const BOOKS = [
       "A Renaissance murder mystery told in letters",
       "Florentine art world",
       "Many points of view"
-    ]
+    ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9780374614607.jpg"
   },
   {
     "title": "Pest",
@@ -5229,6 +5283,7 @@ const BOOKS = [
       "Strange bureaucracies",
       "Estranged perception"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9781955904308.jpg",
     "publicationYear": 2023
   },
   {
@@ -5647,7 +5702,8 @@ const BOOKS = [
       "Quiet menace",
       "Small cruelties",
       "Japanese miniaturism"
-    ]
+    ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9781250375988.jpg"
   },
   {
     "title": "Same Bed Different Dreams",
@@ -5706,7 +5762,8 @@ const BOOKS = [
       "Fairy-tale reimaginings",
       "Women's friendship across stories",
       "Glass mountain, iron shoes"
-    ]
+    ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9781250341006.jpg"
   },
   {
     "title": "Selected Stories",
@@ -5741,6 +5798,7 @@ const BOOKS = [
       "Triadic semiotics",
       "Defining humanity"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9781587317583.jpg",
     "publicationYear": 2010
   },
   {
@@ -5824,6 +5882,7 @@ const BOOKS = [
       "Empty rooms",
       "Argentine quiet unease"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9780525541400.jpg",
     "publicationYear": 2023
   },
   {
@@ -5839,6 +5898,7 @@ const BOOKS = [
       "Studio life",
       "The designer’s eye"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9781616890612.jpg",
     "publicationYear": 2012
   },
   {
@@ -5955,7 +6015,8 @@ const BOOKS = [
     "isbn": "9781250328533",
     "genres": [
       "Fiction"
-    ]
+    ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9781250328533.jpg"
   },
   {
     "title": "Skullcrack City",
@@ -6076,7 +6137,8 @@ const BOOKS = [
       "Speaker saga continues",
       "Power of language",
       "Adversaries and allies"
-    ]
+    ],
+    "coverUrl": "https://m.media-amazon.com/images/I/51raU1Lc+dL._SY445_SX342_FMwebp_.jpg"
   },
   {
     "title": "Speaker of Ma’ila",
@@ -6091,6 +6153,7 @@ const BOOKS = [
       "Speech and power",
       "Outsider as hero"
     ],
+    "coverUrl": "https://m.media-amazon.com/images/I/51C0kyD3BAL._SY445_SX342_FMwebp_.jpg",
     "publicationYear": 2020
   },
   {
@@ -6106,6 +6169,7 @@ const BOOKS = [
       "Languages of power",
       "Worldbuilding"
     ],
+    "coverUrl": "https://m.media-amazon.com/images/I/51yzsmtUkiL._SY445_SX342_FMwebp_.jpg",
     "publicationYear": 2021
   },
   {
@@ -6238,6 +6302,7 @@ const BOOKS = [
       "Florida Gothic",
       "Sibling rescue"
     ],
+    "coverUrl": "https://m.media-amazon.com/images/I/51uzoXjrRlL._SY445_SX342_QL70_FMwebp_.jpg",
     "publicationYear": 2011
   },
   {
@@ -6337,6 +6402,7 @@ const BOOKS = [
       "Symbol systems",
       "Meaning and form"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9781580934725.jpg",
     "publicationYear": 2016
   },
   {
@@ -6371,6 +6437,7 @@ const BOOKS = [
       "Cross-cultural encounter",
       "Imagined history"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9780811228947.jpg",
     "publicationYear": 2019
   },
   {
@@ -6456,6 +6523,7 @@ const BOOKS = [
       "A grieving cop",
       "Vengeance"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9780593133873.jpg",
     "publicationYear": 2020
   },
   {
@@ -6473,6 +6541,7 @@ const BOOKS = [
       "Everyday tyranny",
       "Smuggled testimony"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9780802126207.jpg",
     "publicationYear": 2017
   },
   {
@@ -6606,6 +6675,7 @@ const BOOKS = [
       "Terrorism's intimate aftermath",
       "Survivors and perpetrators"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9780143109273.jpg",
     "publicationYear": 2016
   },
   {
@@ -6639,6 +6709,7 @@ const BOOKS = [
       "Beauty of the unnoticed",
       "Japanese aesthetics"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9780241366356.jpg",
     "publicationYear": 2019
   },
   {
@@ -6864,6 +6935,7 @@ const BOOKS = [
       "Hybrid beings",
       "Endings"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9781101972748.jpg",
     "publicationYear": 2018
   },
   {
@@ -7122,6 +7194,7 @@ const BOOKS = [
       "Lust and predation",
       "A scholar and a stranger"
     ],
+    "coverUrl": "https://m.media-amazon.com/images/I/51vzRJuZ+nL._SY445_SX342_FMwebp_.jpg",
     "publicationYear": 2016
   },
   {
@@ -7140,6 +7213,7 @@ const BOOKS = [
       "Hope amid horror",
       "Inner life"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9780812415087.jpg",
     "publicationYear": 1982
   },
   {
@@ -7291,6 +7365,7 @@ const BOOKS = [
       "Workplace reports as form",
       "Strange objects and longing"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9780811234825.jpg",
     "publicationYear": 2023
   },
   {
@@ -7340,6 +7415,7 @@ const BOOKS = [
       "Hybrid beings",
       "Reawakening"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9781101972724.jpg",
     "publicationYear": 2017
   },
   {
@@ -7525,6 +7601,7 @@ const BOOKS = [
       "Medieval piety",
       "Lives of the saints"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9780691154077.jpg",
     "publicationYear": 2012
   },
   {
@@ -7707,6 +7784,7 @@ const BOOKS = [
       "Cultural histories",
       "Plant stories"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9781784886745.jpg",
     "publicationYear": 2024
   },
   {
@@ -7912,7 +7990,8 @@ const BOOKS = [
       "Domestic objects with inner lives",
       "Quiet melancholy",
       "The everyday animated"
-    ]
+    ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9781668097267.jpg"
   },
   {
     "title": "The Information: A History, A Theory, A Flood",
@@ -7961,6 +8040,7 @@ const BOOKS = [
       "Envy",
       "Adulthood vs. adolescence"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9781594632341.jpg",
     "publicationYear": 2014
   },
   {
@@ -8043,6 +8123,7 @@ const BOOKS = [
       "Critique of Chomsky",
       "Speech as human leap"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9780316404631.jpg",
     "publicationYear": 2017
   },
   {
@@ -8443,6 +8524,7 @@ const BOOKS = [
       "Survival",
       "Evil incarnate"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9781250118141.jpg",
     "publicationYear": 2017
   },
   {
@@ -8460,6 +8542,7 @@ const BOOKS = [
       "Latin American Gothic",
       "Madness and shape-shifting"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9780811232227.jpg",
     "publicationYear": 2024
   },
   {
@@ -8978,6 +9061,7 @@ const BOOKS = [
       "Lost monuments",
       "Archaeology of wonder"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9780500297070.jpg",
     "publicationYear": 2023
   },
   {
@@ -9099,7 +9183,8 @@ const BOOKS = [
       "Old friends reunited",
       "What waits at the top",
       "Adolescent loss revisited"
-    ]
+    ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9780593156582.jpg"
   },
   {
     "title": "The Story of Language",
@@ -9217,6 +9302,7 @@ const BOOKS = [
       "Consumer culture",
       "Domestic semiotics"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9781788738545.jpg",
     "publicationYear": 2020
   },
   {
@@ -9233,6 +9319,7 @@ const BOOKS = [
       "Fairy tales in noir",
       "Estranged language"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9780997366679.jpg",
     "publicationYear": 2018
   },
   {
@@ -9333,6 +9420,7 @@ const BOOKS = [
       "Poaching and conservation",
       "Mind uploaded into beast"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9781250855527.jpg",
     "publicationYear": 2024
   },
   {
@@ -9485,6 +9573,7 @@ const BOOKS = [
       "Indigenous knowledge",
       "Loss at sea"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9780374619572.jpg",
     "publicationYear": 2025
   },
   {
@@ -9587,6 +9676,7 @@ const BOOKS = [
       "Brewing methods",
       "Specialty coffee culture"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9780228100942.jpg",
     "publicationYear": 2018
   },
   {
@@ -9636,6 +9726,7 @@ const BOOKS = [
       "Moral compromise",
       "Faith and craft"
     ],
+    "coverUrl": "https://m.media-amazon.com/images/I/410PnelqycL._SY445_SX342_FMwebp_.jpg",
     "publicationYear": 2017
   },
   {
@@ -9738,6 +9829,7 @@ const BOOKS = [
       "Early modern miracles",
       "Belief and the impossible"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9780300259803.jpg",
     "publicationYear": 2023
   },
   {
@@ -9822,6 +9914,7 @@ const BOOKS = [
       "Posthuman drift",
       "Vegetal transformation"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9781250165718.jpg",
     "publicationYear": 2017
   },
   {
@@ -10002,6 +10095,7 @@ const BOOKS = [
     "genres": [
       "Fiction"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9780593979044.jpg",
     "publicationYear": 2025
   },
   {
@@ -10065,6 +10159,7 @@ const BOOKS = [
       "Defending common things",
       "Chesterton’s eye"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9781507864326.jpg",
     "publicationYear": 2015
   },
   {
@@ -10132,6 +10227,7 @@ const BOOKS = [
       "Late-millennial unease",
       "Compressed lives"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9780991360888.jpg",
     "publicationYear": 2018
   },
   {
@@ -10183,6 +10279,7 @@ const BOOKS = [
       "Strategic frameworks",
       "Reference for branders"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9780760378205.jpg",
     "publicationYear": 2023
   },
   {
@@ -10462,6 +10559,7 @@ const BOOKS = [
       "Vanier and L’Arche",
       "Welcoming the stranger"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9781498225687.jpg",
     "publicationYear": 2016
   },
   {
@@ -10530,7 +10628,8 @@ const BOOKS = [
       "Plants as teachers",
       "Botany and human life",
       "Lessons from trees"
-    ]
+    ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9781250335166.jpg"
   },
   {
     "title": "When We Cease to Understand the World",
@@ -10579,7 +10678,8 @@ const BOOKS = [
       "Authoritarian futures",
       "AI governance",
       "Resistance and surveillance"
-    ]
+    ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9780374615369.jpg"
   },
   {
     "title": "White Noise",
@@ -10645,6 +10745,7 @@ const BOOKS = [
       "Mexican rural healing",
       "Language and lineage"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9781646221998.jpg",
     "publicationYear": 2023
   },
   {
@@ -10700,6 +10801,7 @@ const BOOKS = [
       "Media and ideology",
       "Race, identity, representation"
     ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9781478014713.jpg",
     "publicationYear": 2021
   },
   {

@@ -435,6 +435,7 @@ const BOOKS = [
     "title": "A Voyage to Arcturus",
     "author": "David  Lindsay",
     "isbn": "9780345232083",
+    "manualCoverUrl": "https://m.media-amazon.com/images/I/719hx21w3eL._AC_UF1000,1000_QL80_.jpg",
     "genres": [
       "Science fiction",
       "Fantasy",
@@ -1111,6 +1112,7 @@ const BOOKS = [
     "author": "Mervyn Peake",
     "additionalAuthors": "Sebastian Peake, Joanne Harris",
     "isbn": "9780720613063",
+    "manualCoverUrl": "https://m.media-amazon.com/images/I/81xtUgB4nYL._SL1500_.jpg",
     "genres": [
       "Fantasy",
       "Short stories",
@@ -2092,6 +2094,7 @@ const BOOKS = [
     "title": "Earwig",
     "author": "Brian Catling",
     "isbn": "9781473687103",
+    "manualCoverUrl": "https://m.media-amazon.com/images/I/A1hasKGUCML._SY522_.jpg",
     "genres": [
       "Weird fiction",
       "Literary fiction"
@@ -2297,6 +2300,7 @@ const BOOKS = [
     "title": "Father Brown Crime Stories: Twenty Four Short Mysteries",
     "author": "G.K. Chesterton",
     "isbn": "9780517001820",
+    "manualCoverUrl": "https://m.media-amazon.com/images/I/71wPd8LtYHL._SY522_.jpg",
     "genres": [
       "Mystery",
       "Short stories",
@@ -2410,6 +2414,7 @@ const BOOKS = [
     "title": "Friday Black",
     "author": "Nana Kwame Adjei-Brenyah",
     "isbn": "9781328911247",
+    "manualCoverUrl": "https://i5.walmartimages.com/seo/Friday-Black-Paperback_d2e50fa6-bf2e-4cd0-8166-9cc30d2bd84f.905b5e4c5a5f7e76eab7252f32aed6f7.jpeg?odnHeight=573&odnWidth=573&odnBg=FFFFFF",
     "genres": [
       "Literary fiction",
       "Short stories",
@@ -3171,6 +3176,7 @@ const BOOKS = [
   {
     "title": "Komodo",
     "author": "Jeff VanderMeer",
+    "manualCoverUrl": "https://m.media-amazon.com/images/I/51-7f9OyE1L._SX342_SY445_QL70_FMwebp_.jpg",
     "genres": [
       "Fiction"
     ]
@@ -3849,6 +3855,7 @@ const BOOKS = [
     "title": "Member",
     "author": "Michael Cisco",
     "isbn": "9781907681233",
+    "manualCoverUrl": "https://m.media-amazon.com/images/I/41U0fF8q3lL._SY445_SX342_FMwebp_.jpg",
     "genres": [
       "Weird fiction",
       "Literary fiction"
@@ -4135,6 +4142,7 @@ const BOOKS = [
     "author": "Roland Barthes",
     "additionalAuthors": "Annette Lavers",
     "isbn": "9780374521509",
+    "manualCoverUrl": "https://m.media-amazon.com/images/I/51wYiPr-03L._SL1500_.jpg",
     "genres": [
       "Philosophy",
       "Cultural criticism",
@@ -4484,6 +4492,7 @@ const BOOKS = [
     "title": "One’s Company",
     "author": "Ashley Hutson",
     "isbn": "9780393866643",
+    "manualCoverUrl": "https://m.media-amazon.com/images/I/A1oVyfJCd0L._SY522_.jpg",
     "genres": [
       "Literary fiction"
     ],
@@ -5450,6 +5459,7 @@ const BOOKS = [
     "title": "Speaker and the Hataka",
     "author": "Trenton Anthony",
     "isbn": "9798838393159",
+    "manualCoverUrl": "https://m.media-amazon.com/images/I/51raU1Lc+dL._SY445_SX342_FMwebp_.jpg",
     "genres": [
       "Fantasy",
       "Science fiction"
@@ -5464,6 +5474,7 @@ const BOOKS = [
     "title": "Speaker of Ma’ila",
     "author": "Trenton Anthony",
     "isbn": "9798671945836",
+    "manualCoverUrl": "https://m.media-amazon.com/images/I/51C0kyD3BAL._SY445_SX342_FMwebp_.jpg",
     "genres": [
       "Fantasy",
       "Science fiction"
@@ -5478,6 +5489,7 @@ const BOOKS = [
     "title": "Speakers of Elor",
     "author": "Trenton Anthony",
     "isbn": "9798507120475",
+    "manualCoverUrl": "https://m.media-amazon.com/images/I/51yzsmtUkiL._SY445_SX342_FMwebp_.jpg",
     "genres": [
       "Fantasy",
       "Science fiction"
@@ -5595,6 +5607,7 @@ const BOOKS = [
     "title": "Swamplandia!",
     "author": "Karen Russell",
     "isbn": "9780307276681",
+    "manualCoverUrl": "https://m.media-amazon.com/images/I/51uzoXjrRlL._SY445_SX342_QL70_FMwebp_.jpg",
     "genres": [
       "Literary fiction",
       "Magical realism"
@@ -6389,6 +6402,7 @@ const BOOKS = [
     "title": "The Devourers",
     "author": "Indra Das",
     "isbn": "9781101967515",
+    "manualCoverUrl": "https://m.media-amazon.com/images/I/51vzRJuZ+nL._SY445_SX342_FMwebp_.jpg",
     "genres": [
       "Literary fiction",
       "Fantasy",
@@ -8635,6 +8649,7 @@ const BOOKS = [
     "title": "The Wounds of the Dead",
     "author": "Vikram Paralkar",
     "isbn": "9789352774371",
+    "manualCoverUrl": "https://m.media-amazon.com/images/I/410PnelqycL._SY445_SX342_FMwebp_.jpg",
     "genres": [
       "Literary fiction",
       "Magical realism"
