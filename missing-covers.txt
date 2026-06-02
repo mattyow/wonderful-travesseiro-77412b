@@ -1,17 +1,13 @@
 Total without coverUrl: 53
   A Hologram for the King | Dave Eggers | ISBN: 9780241145852
-  A Voyage to Arcturus | David  Lindsay | ISBN: 9780345232083
   ABC of Relativity | Bertrand Russell | ISBN: 9780045210022
   African Folk Tales | Charlotte Leslau | ISBN: 9781299307513
   Boy in Darkness and Other Stories | Mervyn Peake | ISBN: 9780720613063
   Children of Gebelawi | Naguib Mahfouz | ISBN: 9780894106546
-  Crandolin | Anna Tambour | ISBN: 9781907681196
   Culture, Language, and Personality | Edward Sapir | ISBN: 9780520011168
   Don’t Call it That | Eli Altman | ISBN: 9781734248302
-  Earwig | Brian Catling | ISBN: 9781473687103
   Ethics | Michael Cisco | ISBN: 9798808549395
   Father Brown Crime Stories: Twenty Four Short Mysteries | G.K. Chesterton | ISBN: 9780517001820
-  Gog | Andrew Sinclair | ISBN: 9780340486085
   Half Gods | Akil Kumarasamy | ISBN: 9780374167677
   Handbook for Preparing Visual Media | Ed Minor | ISBN: 9780070424074
   Homage to the Alphabet: Typeface Sourcebook | Rockport Publishers | ISBN: 9780935603477
@@ -30,9 +26,6 @@ Total without coverUrl: 53
   Semiotics and Interpretation | Robert Scholes | ISBN: 9780300160932
   Sign, Language, and Behavior | Charles Morris | ISBN: 9780807600207
   Sir Gawain and the Green Knight |  | ISBN: 393097544
-  Speaker and the Hataka | Trenton Anthony | ISBN: 9798838393159
-  Speaker of Ma’ila | Trenton Anthony | ISBN: 9798671945836
-  Speakers of Elor | Trenton Anthony | ISBN: 9798507120475
   Structuralism & Semiotics | Terence Hawkes | ISBN: 9780416796209
   The Art of Letters | Kris Sowersby | ISBN: 9780648596349
   The Boats of the “Glen Carrig” | William Hope Hodgson | ISBN: 9781519623812
