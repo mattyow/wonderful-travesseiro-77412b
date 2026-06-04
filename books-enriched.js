@@ -7032,6 +7032,17 @@ const BOOKS = [
     "publicationYear": 1964
   },
   {
+    "title": "The Constitution of Liberty",
+    "author": "F. A. Hayek",
+    "isbn": "9780226315393",
+    "genres": [
+      "Nonfiction",
+      "Philosophy"
+    ],
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780226315393-L.jpg?default=false",
+    "publicationYear": 2011
+  },
+  {
     "title": "The Creative Act",
     "author": "Rick Rubin",
     "isbn": "9780593652886",
@@ -9684,6 +9695,17 @@ const BOOKS = [
     ],
     "coverUrl": "https://images-us.bookshop.org/ingram/9780228100942.jpg",
     "publicationYear": 2018
+  },
+  {
+    "title": "The World of Goya: 1746 - 1828 (Time-Life Library of Art)",
+    "author": "Richard Schickel",
+    "isbn": "9780316508605",
+    "genres": [
+      "Biography",
+      "Nonfiction",
+      "Collection"
+    ],
+    "publicationYear": 1968
   },
   {
     "title": "The World of Vermeer: 1632–1675 (Time-Life Library of Art)",

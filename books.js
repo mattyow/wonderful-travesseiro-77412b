@@ -6267,6 +6267,15 @@ const BOOKS = [
     ]
   },
   {
+    "title": "The Constitution of Liberty",
+    "author": "F. A. Hayek",
+    "isbn": "9780226315393",
+    "genres": [
+      "Nonfiction",
+      "Philosophy"
+    ]
+  },
+  {
     "title": "The Creative Act",
     "author": "Rick Rubin",
     "isbn": "9780593652886",
@@ -8619,6 +8628,16 @@ const BOOKS = [
       "Origins and geography",
       "Brewing methods",
       "Specialty coffee culture"
+    ]
+  },
+  {
+    "title": "The World of Goya: 1746 - 1828 (Time-Life Library of Art)",
+    "author": "Richard Schickel",
+    "isbn": "9780316508605",
+    "genres": [
+      "Biography",
+      "Nonfiction",
+      "Collection"
     ]
   },
   {
