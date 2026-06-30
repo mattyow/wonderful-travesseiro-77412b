@@ -985,6 +985,14 @@ const BOOKS = [
     ]
   },
   {
+    "title": "Between Two Fires",
+    "author": "Christopher Buehlman",
+    "isbn": "9798662731349",
+    "genres": [
+      "Fiction"
+    ]
+  },
+  {
     "title": "Big Hair and Plastic Grass: A Funky Ride Through Baseball and America in the Swinging '70s",
     "author": "Dan Epstein",
     "isbn": "9781250007247",
@@ -7953,6 +7961,14 @@ const BOOKS = [
     ]
   },
   {
+    "title": "The River Has Roots",
+    "author": "Amal El-Mohtar",
+    "isbn": "9781250363688",
+    "genres": [
+      "Fiction"
+    ]
+  },
+  {
     "title": "The Road",
     "author": "Cormac McCarthy",
     "isbn": "9780307387899",
@@ -9588,6 +9604,16 @@ const BOOKS = [
       "Two women's lives intersecting",
       "Mexican rural healing",
       "Language and lineage"
+    ]
+  },
+  {
+    "title": "With the Heart of a Ghost",
+    "author": "Kim Sunwoo",
+    "additionalAuthors": "Chi-Young Kim",
+    "isbn": "9781961884601",
+    "genres": [
+      "Collection",
+      "Fiction"
     ]
   },
   {

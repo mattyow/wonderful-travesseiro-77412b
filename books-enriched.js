@@ -1105,6 +1105,16 @@ const BOOKS = [
     "publicationYear": 2015
   },
   {
+    "title": "Between Two Fires",
+    "author": "Christopher Buehlman",
+    "isbn": "9798662731349",
+    "genres": [
+      "Fiction"
+    ],
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9798662731349-L.jpg?default=false",
+    "publicationYear": 2012
+  },
+  {
     "title": "Big Hair and Plastic Grass: A Funky Ride Through Baseball and America in the Swinging '70s",
     "author": "Dan Epstein",
     "isbn": "9781250007247",
@@ -6020,7 +6030,8 @@ const BOOKS = [
     "genres": [
       "Fiction"
     ],
-    "coverUrl": "https://images-us.bookshop.org/ingram/9781250328533.jpg"
+    "coverUrl": "https://images-us.bookshop.org/ingram/9781250328533.jpg",
+    "publicationYear": 2025
   },
   {
     "title": "Skullcrack City",
@@ -8932,6 +8943,16 @@ const BOOKS = [
     "publicationYear": 2016
   },
   {
+    "title": "The River Has Roots",
+    "author": "Amal El-Mohtar",
+    "isbn": "9781250363688",
+    "genres": [
+      "Fiction"
+    ],
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9781250363688-L.jpg?default=false",
+    "publicationYear": 2026
+  },
+  {
     "title": "The Road",
     "author": "Cormac McCarthy",
     "isbn": "9780307387899",
@@ -10776,6 +10797,18 @@ const BOOKS = [
     ],
     "coverUrl": "https://images-us.bookshop.org/ingram/9781646221998.jpg",
     "publicationYear": 2023
+  },
+  {
+    "title": "With the Heart of a Ghost",
+    "author": "Kim Sunwoo",
+    "additionalAuthors": "Chi-Young Kim",
+    "isbn": "9781961884601",
+    "genres": [
+      "Collection",
+      "Fiction"
+    ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9781961884601.jpg",
+    "publicationYear": 2025
   },
   {
     "title": "Wolf in White Van",
