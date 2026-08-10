@@ -3807,6 +3807,22 @@ const BOOKS = [
     "publicationYear": 2014
   },
   {
+    "title": "Lexicon",
+    "author": "Max Barry",
+    "isbn": "9780143125426",
+    "genres": [
+      "Science fiction",
+      "Thriller"
+    ],
+    "themes": [
+      "Language as weapon",
+      "Persuasion and control",
+      "Secret society of poets"
+    ],
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780143125426-L.jpg?default=false",
+    "publicationYear": 2014
+  },
+  {
     "title": "Liberation Day",
     "author": "George Saunders",
     "isbn": "9780525509592",
@@ -4421,6 +4437,17 @@ const BOOKS = [
     ],
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9780679751526-L.jpg?default=false",
     "publicationYear": 1999
+  },
+  {
+    "title": "Mimesis: The Representation of Reality in Western Literature",
+    "author": "Erich Auerbach",
+    "isbn": "9780691012698",
+    "genres": [
+      "Philosophy",
+      "Nonfiction"
+    ],
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780691012698-L.jpg?default=false",
+    "publicationYear": 1950
   },
   {
     "title": "Mina’s Matchbook",
@@ -5152,6 +5179,16 @@ const BOOKS = [
       "Earth's many vanished worlds"
     ],
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9780593132906-L.jpg?default=false",
+    "publicationYear": 2023
+  },
+  {
+    "title": "Our Wives Under the Sea",
+    "author": "Julia Armfield",
+    "isbn": "9781250229908",
+    "genres": [
+      "Fiction"
+    ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9781250229908.jpg",
     "publicationYear": 2023
   },
   {
@@ -5966,6 +6003,16 @@ const BOOKS = [
     "publicationYear": 2018
   },
   {
+    "title": "Shroud",
+    "author": "Adrian Tchaikovsky",
+    "isbn": "9780316579025",
+    "genres": [
+      "Science Fiction"
+    ],
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780316579025-L.jpg?default=false",
+    "publicationYear": 2025
+  },
+  {
     "title": "Sign, Language, and Behavior",
     "author": "Charles Morris",
     "isbn": "9780807600207",
@@ -6139,6 +6186,17 @@ const BOOKS = [
     ],
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9780374266776-L.jpg?default=false",
     "publicationYear": 2021
+  },
+  {
+    "title": "Soul",
+    "author": "Andrey Platonov",
+    "isbn": "9781590172544",
+    "genres": [
+      "Collection",
+      "Fiction"
+    ],
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9781590172544-L.jpg?default=false",
+    "publicationYear": 2008
   },
   {
     "title": "Speaker and the Hataka",
@@ -7363,6 +7421,15 @@ const BOOKS = [
     "publicationYear": 2008
   },
   {
+    "title": "The Edge of the Woods",
+    "author": "Kathryn Bromwich",
+    "isbn": "9781953387615",
+    "genres": [
+      "Fiction"
+    ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9781953387615.jpg"
+  },
+  {
     "title": "The Elements of Typographic Style",
     "author": "Robert Bringhurst",
     "isbn": "9780881792065",
@@ -8418,6 +8485,16 @@ const BOOKS = [
     ],
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9781593080297-L.jpg?default=false",
     "publicationYear": 2003
+  },
+  {
+    "title": "The Ministry of Time",
+    "author": "Kaliane Bradley",
+    "isbn": "9781668045152",
+    "genres": [
+      "Fiction"
+    ],
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9781668045152-L.jpg?default=false",
+    "publicationYear": 2025
   },
   {
     "title": "The Moon is Down",

@@ -3389,6 +3389,20 @@ const BOOKS = [
     ]
   },
   {
+    "title": "Lexicon",
+    "author": "Max Barry",
+    "isbn": "9780143125426",
+    "genres": [
+      "Science fiction",
+      "Thriller"
+    ],
+    "themes": [
+      "Language as weapon",
+      "Persuasion and control",
+      "Secret society of poets"
+    ]
+  },
+  {
     "title": "Liberation Day",
     "author": "George Saunders",
     "isbn": "9780525509592",
@@ -3936,6 +3950,15 @@ const BOOKS = [
       "Savannah eccentricity",
       "Crime and society",
       "Place as character"
+    ]
+  },
+  {
+    "title": "Mimesis: The Representation of Reality in Western Literature",
+    "author": "Erich Auerbach",
+    "isbn": "9780691012698",
+    "genres": [
+      "Philosophy",
+      "Nonfiction"
     ]
   },
   {
@@ -4587,6 +4610,14 @@ const BOOKS = [
       "Deep time",
       "Ancient ecosystems",
       "Earth's many vanished worlds"
+    ]
+  },
+  {
+    "title": "Our Wives Under the Sea",
+    "author": "Julia Armfield",
+    "isbn": "9781250229908",
+    "genres": [
+      "Fiction"
     ]
   },
   {
@@ -5312,6 +5343,14 @@ const BOOKS = [
     ]
   },
   {
+    "title": "Shroud",
+    "author": "Adrian Tchaikovsky",
+    "isbn": "9780316579025",
+    "genres": [
+      "Science Fiction"
+    ]
+  },
+  {
     "title": "Sign, Language, and Behavior",
     "author": "Charles Morris",
     "isbn": "9780807600207",
@@ -5465,6 +5504,15 @@ const BOOKS = [
       "Bodily transformation",
       "Black motherhood",
       "Wilderness and survival"
+    ]
+  },
+  {
+    "title": "Soul",
+    "author": "Andrey Platonov",
+    "isbn": "9781590172544",
+    "genres": [
+      "Collection",
+      "Fiction"
     ]
   },
   {
@@ -6560,6 +6608,14 @@ const BOOKS = [
     ]
   },
   {
+    "title": "The Edge of the Woods",
+    "author": "Kathryn Bromwich",
+    "isbn": "9781953387615",
+    "genres": [
+      "Fiction"
+    ]
+  },
+  {
     "title": "The Elements of Typographic Style",
     "author": "Robert Bringhurst",
     "isbn": "9780881792065",
@@ -7493,6 +7549,14 @@ const BOOKS = [
       "Family and burden",
       "The bureaucratic absurd",
       "Transformation"
+    ]
+  },
+  {
+    "title": "The Ministry of Time",
+    "author": "Kaliane Bradley",
+    "isbn": "9781668045152",
+    "genres": [
+      "Fiction"
     ]
   },
   {
