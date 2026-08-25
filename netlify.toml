@@ -1,3 +1,9 @@
 [build]
   command = "node build-covers.js"
   publish = "."
+
+[[redirects]]
+  from = "/*"
+  to = "https://mattyow.com/books/:splat"
+  status = 301
+  force = true
