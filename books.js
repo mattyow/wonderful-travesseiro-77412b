@@ -601,6 +601,14 @@ const BOOKS = [
     ]
   },
   {
+    "title": "All The Horses of Iceland",
+    "author": "Sarah Tolmie",
+    "isbn": "9781250807939",
+    "genres": [
+      "Fiction"
+    ]
+  },
+  {
     "title": "All the Pretty Horses",
     "author": "Cormac McCarthy",
     "isbn": "9780394574745",
@@ -4675,6 +4683,15 @@ const BOOKS = [
     ]
   },
   {
+    "title": "Pandemonium Waltz",
+    "author": "Jeffrey Ford",
+    "isbn": "9781590217863",
+    "genres": [
+      "Collection",
+      "Fiction"
+    ]
+  },
+  {
     "title": "Paul Rand: A Designer’s Art",
     "author": "Paul Rand",
     "additionalAuthors": "Steven Heller",
@@ -5661,6 +5678,15 @@ const BOOKS = [
       "Structuralist theory",
       "Saussure to Barthes",
       "Introductory survey"
+    ]
+  },
+  {
+    "title": "Structuralism in Literature",
+    "author": "Robert Scholes",
+    "isbn": "9780300018509",
+    "genres": [
+      "Philosophy",
+      "Nonfiction"
     ]
   },
   {
@@ -7287,6 +7313,14 @@ const BOOKS = [
     ]
   },
   {
+    "title": "The Island of Last Things",
+    "author": "Emma Sloley",
+    "isbn": "9781250329240",
+    "genres": [
+      "Fiction"
+    ]
+  },
+  {
     "title": "The King in Yellow",
     "author": "Robert W. Chambers",
     "isbn": "9781537514932",
@@ -8682,6 +8716,15 @@ const BOOKS = [
     ]
   },
   {
+    "title": "The Witch",
+    "author": "Marie NDiaye",
+    "additionalAuthors": "Jordan Stump",
+    "isbn": "9798217006809",
+    "genres": [
+      "Fiction"
+    ]
+  },
+  {
     "title": "The Wood Beyond the World",
     "author": "William Morris",
     "isbn": "9781404340572",
@@ -9653,6 +9696,15 @@ const BOOKS = [
       "Masculine identity",
       "Adventure and faith",
       "Spiritual formation"
+    ]
+  },
+  {
+    "title": "William Blake and The Sea Monsters of Love",
+    "author": "Philip Hoare",
+    "isbn": "9781639368471",
+    "genres": [
+      "Nonfiction",
+      "Biography"
     ]
   },
   {

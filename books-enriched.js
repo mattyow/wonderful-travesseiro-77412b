@@ -672,6 +672,16 @@ const BOOKS = [
     "publicationYear": 2025
   },
   {
+    "title": "All The Horses of Iceland",
+    "author": "Sarah Tolmie",
+    "isbn": "9781250807939",
+    "genres": [
+      "Fiction"
+    ],
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9781250807939-L.jpg?default=false",
+    "publicationYear": 2022
+  },
+  {
     "title": "All the Pretty Horses",
     "author": "Cormac McCarthy",
     "isbn": "9780394574745",
@@ -5253,6 +5263,16 @@ const BOOKS = [
     "publicationYear": 1989
   },
   {
+    "title": "Pandemonium Waltz",
+    "author": "Jeffrey Ford",
+    "isbn": "9781590217863",
+    "genres": [
+      "Collection",
+      "Fiction"
+    ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9781590217863.jpg"
+  },
+  {
     "title": "Paul Rand: A Designer’s Art",
     "author": "Paul Rand",
     "additionalAuthors": "Steven Heller",
@@ -6360,6 +6380,17 @@ const BOOKS = [
       "Introductory survey"
     ],
     "publicationYear": 1977
+  },
+  {
+    "title": "Structuralism in Literature",
+    "author": "Robert Scholes",
+    "isbn": "9780300018509",
+    "genres": [
+      "Philosophy",
+      "Nonfiction"
+    ],
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780300018509-L.jpg?default=false",
+    "publicationYear": 1975
   },
   {
     "title": "Swamplandia!",
@@ -8189,6 +8220,16 @@ const BOOKS = [
     "publicationYear": 2006
   },
   {
+    "title": "The Island of Last Things",
+    "author": "Emma Sloley",
+    "isbn": "9781250329240",
+    "genres": [
+      "Fiction"
+    ],
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9781250329240-L.jpg?default=false",
+    "publicationYear": 2025
+  },
+  {
     "title": "The King in Yellow",
     "author": "Robert W. Chambers",
     "isbn": "9781537514932",
@@ -9762,6 +9803,17 @@ const BOOKS = [
     "publicationYear": 2005
   },
   {
+    "title": "The Witch",
+    "author": "Marie NDiaye",
+    "additionalAuthors": "Jordan Stump",
+    "isbn": "9798217006809",
+    "genres": [
+      "Fiction"
+    ],
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9798217006809-L.jpg?default=false",
+    "publicationYear": 2026
+  },
+  {
     "title": "The Wood Beyond the World",
     "author": "William Morris",
     "isbn": "9781404340572",
@@ -10857,6 +10909,17 @@ const BOOKS = [
     ],
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9781400200399-L.jpg?default=false",
     "publicationYear": 2011
+  },
+  {
+    "title": "William Blake and The Sea Monsters of Love",
+    "author": "Philip Hoare",
+    "isbn": "9781639368471",
+    "genres": [
+      "Nonfiction",
+      "Biography"
+    ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9781639368471.jpg",
+    "publicationYear": 2025
   },
   {
     "title": "Witches",
