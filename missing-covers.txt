@@ -1,9 +1,6 @@
 Total without coverUrl: 53
-  A Hologram for the King | Dave Eggers | ISBN: 9780241145852
   ABC of Relativity | Bertrand Russell | ISBN: 9780045210022
   African Folk Tales | Charlotte Leslau | ISBN: 9781299307513
-  Boy in Darkness and Other Stories | Mervyn Peake | ISBN: 9780720613063
-  Children of Gebelawi | Naguib Mahfouz | ISBN: 9780894106546
   Culture, Language, and Personality | Edward Sapir | ISBN: 9780520011168
   Don’t Call it That | Eli Altman | ISBN: 9781734248302
   Ethics | Michael Cisco | ISBN: 9798808549395
@@ -11,7 +8,6 @@ Total without coverUrl: 53
   Half Gods | Akil Kumarasamy | ISBN: 9780374167677
   Handbook for Preparing Visual Media | Ed Minor | ISBN: 9780070424074
   Homage to the Alphabet: Typeface Sourcebook | Rockport Publishers | ISBN: 9780935603477
-  Hum | Helen Phillips | ISBN: 9781668008831
   Identify: Basic Principles of Identity Design in the Iconic Trademarks of Chermayeff  Geismar | Ivan Chermayeff, Sagi Haviv, Tom Geismar | ISBN: 9781440310324
   Komodo | Jeff VanderMeer | ISBN: NONE
   Learning to Look: A Handbook for the Visual Arts | Joshua C. Taylor | ISBN: 9780226791494
@@ -22,17 +18,14 @@ Total without coverUrl: 53
   Only the Lowly | Brian Catling | ISBN: 9781916041103
   Paul Rand: A Designer’s Art | Paul Rand | ISBN: 9781616894863
   Pictos | Index Book | ISBN: 9788415308362
-  Point B | Drew Magary | ISBN: 9798637737680
   Semiotics and Interpretation | Robert Scholes | ISBN: 9780300160932
   Sign, Language, and Behavior | Charles Morris | ISBN: 9780807600207
   Sir Gawain and the Green Knight |  | ISBN: 393097544
   Structuralism & Semiotics | Terence Hawkes | ISBN: 9780416796209
-  The Art of Letters | Kris Sowersby | ISBN: 9780648596349
   The Boats of the “Glen Carrig” | William Hope Hodgson | ISBN: 9781519623812
   The Complete Tales of Edgar Allan Poe | Edgar Allan Poe | ISBN: 9780760716212
   The Confidence-Man | Herman Melville | ISBN: 9780451516985
   The Death of Ivan Ilych | Leo Tolstoy | ISBN: 9780451514851
-  The Devourers | Indra Das | ISBN: 9781101967515
   The Disintegration of Form in the Arts | Erich von Kahler | ISBN: 9780807604410
   The End of All Songs (Dancers at the End of Time, #3) | Michael Moorcock | ISBN: 9780060129996
   The King in Yellow | Robert W. Chambers | ISBN: 9781537514932
@@ -43,5 +36,4 @@ Total without coverUrl: 53
   The Wounds of the Dead | Vikram Paralkar | ISBN: 9789352774371
   Till We Have Faces: A Myth Retold | C.S. Lewis | ISBN: 9780756972226
   Tolkien: A Look Behind the Lord of the Rings | Lin Carter | ISBN: 9780345245205
-  Wolf in White Van | John Darnielle | ISBN: 9781250081223
   Works of Charles Sanders Peirce | Charles Sanders Peirce | ISBN: NONE
