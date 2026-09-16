@@ -266,6 +266,7 @@ const BOOKS = [
       "Middle age and obsolescence",
       "Saudi Arabia"
     ],
+    "coverUrl": "https://store-prod.nyc3.cdn.digitaloceanspaces.com/images/store/901/2025-06-25%2016:06:10%20-0700/large/HologramCover_FINAL_web.png?1750892770",
     "publicationYear": 2013
   },
   {
@@ -1499,7 +1500,8 @@ const BOOKS = [
       "Allegory of monotheistic faiths",
       "A Cairo alley as cosmos",
       "Generations and prophets"
-    ]
+    ],
+    "coverUrl": "https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T3/images/I/51RhHhLv9rL.jpg"
   },
   {
     "title": "Children of Memory",
@@ -1907,6 +1909,7 @@ const BOOKS = [
       "Anthropological linguistics",
       "Sapirian thought"
     ],
+    "coverUrl": "https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T3/images/I/91-WMBtg9UL._SY522_.jpg",
     "publicationYear": 1949
   },
   {
@@ -2967,6 +2970,7 @@ const BOOKS = [
       "Inheritance of war",
       "Family and identity"
     ],
+    "coverUrl": "https://images.booksense.com/images/677/167/9780374167677.jpg",
     "publicationYear": 2018
   },
   {
@@ -3179,7 +3183,8 @@ const BOOKS = [
     "isbn": "9781668008831",
     "genres": [
       "Fiction"
-    ]
+    ],
+    "coverUrl": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1699132200i/195791689.jpg"
   },
   {
     "title": "Hummingbird Salamander",
@@ -5500,6 +5505,7 @@ const BOOKS = [
       "Boarding school",
       "Coming of age in a changed world"
     ],
+    "coverUrl": "https://m.media-amazon.com/images/I/61mWv2MboNL._AC_UF1000,1000_QL80_.jpg",
     "publicationYear": 2020
   },
   {
@@ -7524,6 +7530,7 @@ const BOOKS = [
       "Romantic culmination",
       "The closing of an age"
     ],
+    "coverUrl": "https://moorcography.org/wp-content/uploads/2021/06/cci03052015_0008-granada.jpg",
     "publicationYear": 1976
   },
   {
@@ -10962,7 +10969,8 @@ const BOOKS = [
       "Play-by-mail games",
       "Cause and consequence",
       "Inner worlds"
-    ]
+    ],
+    "coverUrl": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1393646533i/20575425.jpg"
   },
   {
     "title": "Wonder",

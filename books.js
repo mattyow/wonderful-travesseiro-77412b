@@ -230,6 +230,7 @@ const BOOKS = [
     "title": "A Hologram for the King",
     "author": "Dave Eggers",
     "isbn": "9780241145852",
+    "manualCoverUrl": "https://store-prod.nyc3.cdn.digitaloceanspaces.com/images/store/901/2025-06-25%2016:06:10%20-0700/large/HologramCover_FINAL_web.png?1750892770",
     "genres": [
       "Literary fiction"
     ],
@@ -1325,6 +1326,7 @@ const BOOKS = [
     "author": "Naguib Mahfouz",
     "additionalAuthors": "Philip Stewart",
     "isbn": "9780894106546",
+    "manualCoverUrl": "https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T3/images/I/51RhHhLv9rL.jpg",
     "genres": [
       "Literary fiction",
       "Classics",
@@ -1689,6 +1691,7 @@ const BOOKS = [
     "title": "Culture, Language, and Personality",
     "author": "Edward Sapir",
     "isbn": "9780520011168",
+    "manualCoverUrl": "https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T3/images/I/91-WMBtg9UL._SY522_.jpg",
     "genres": [
       "Nonfiction",
       "Linguistics",
@@ -2632,6 +2635,7 @@ const BOOKS = [
     "title": "Half Gods",
     "author": "Akil Kumarasamy",
     "isbn": "9780374167677",
+    "manualCoverUrl": "https://images.booksense.com/images/677/167/9780374167677.jpg",
     "genres": [
       "Literary fiction",
       "Short stories"
@@ -2829,6 +2833,7 @@ const BOOKS = [
     "title": "Hum",
     "author": "Helen Phillips",
     "isbn": "9781668008831",
+    "manualCoverUrl": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1699132200i/195791689.jpg",
     "genres": [
       "Fiction"
     ]
@@ -4889,6 +4894,7 @@ const BOOKS = [
     "title": "Point B",
     "author": "Drew Magary",
     "isbn": "9798637737680",
+    "manualCoverUrl": "https://m.media-amazon.com/images/I/61mWv2MboNL._AC_UF1000,1000_QL80_.jpg",
     "genres": [
       "Science fiction"
     ],
@@ -6689,6 +6695,7 @@ const BOOKS = [
     "title": "The End of All Songs (Dancers at the End of Time, #3)",
     "author": "Michael Moorcock",
     "isbn": "9780060129996",
+    "manualCoverUrl": "https://moorcography.org/wp-content/uploads/2021/06/cci03052015_0008-granada.jpg",
     "genres": [
       "Science fiction",
       "Decadent literature"
@@ -9736,6 +9743,7 @@ const BOOKS = [
     "title": "Wolf in White Van",
     "author": "John Darnielle",
     "isbn": "9781250081223",
+    "manualCoverUrl": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1393646533i/20575425.jpg",
     "genres": [
       "Literary fiction"
     ],
