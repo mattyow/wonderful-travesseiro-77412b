@@ -716,6 +716,14 @@ const BOOKS = [
     ]
   },
   {
+    "title": "Anaximander and the Birth of Science",
+    "author": "Carlo Rovelli",
+    "isbn": "9780593542361",
+    "genres": [
+      "Nonfiction"
+    ]
+  },
+  {
     "title": "Animal Farm",
     "author": "George Orwell",
     "isbn": "9780452284241",
@@ -2710,6 +2718,15 @@ const BOOKS = [
     ]
   },
   {
+    "title": "Hellions",
+    "author": "Julia Elliot",
+    "isbn": "9781963108064",
+    "genres": [
+      "Fiction",
+      "Collection"
+    ]
+  },
+  {
     "title": "HHhH",
     "author": "Laurent Binet",
     "isbn": "9781250033345",
@@ -4096,6 +4113,14 @@ const BOOKS = [
     ]
   },
   {
+    "title": "Mountain View",
+    "author": "Otis West",
+    "isbn": "9781967756001",
+    "genres": [
+      "Fiction"
+    ]
+  },
+  {
     "title": "Mouthful of Birds",
     "author": "Samanta Schweblin",
     "additionalAuthors": "Megan McDowell",
@@ -4168,6 +4193,15 @@ const BOOKS = [
       "East and West",
       "Art and faith",
       "Murder and craft"
+    ]
+  },
+  {
+    "title": "Myth",
+    "author": "Robert E. Segal",
+    "isbn": "9780198724704",
+    "genres": [
+      "Nonfiction",
+      "Philosophy"
     ]
   },
   {
@@ -5144,6 +5178,14 @@ const BOOKS = [
       "Quiet menace",
       "Small cruelties",
       "Japanese miniaturism"
+    ]
+  },
+  {
+    "title": "Saguaro",
+    "author": "Carson Mell",
+    "isbn": "9780615208350",
+    "genres": [
+      "Fiction"
     ]
   },
   {

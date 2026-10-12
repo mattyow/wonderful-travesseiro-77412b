@@ -803,6 +803,16 @@ const BOOKS = [
     "publicationYear": 1996
   },
   {
+    "title": "Anaximander and the Birth of Science",
+    "author": "Carlo Rovelli",
+    "isbn": "9780593542361",
+    "genres": [
+      "Nonfiction"
+    ],
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780593542361-L.jpg?default=false",
+    "publicationYear": 2023
+  },
+  {
     "title": "Animal Farm",
     "author": "George Orwell",
     "isbn": "9780452284241",
@@ -3043,6 +3053,17 @@ const BOOKS = [
     "publicationYear": 2002
   },
   {
+    "title": "Hellions",
+    "author": "Julia Elliot",
+    "isbn": "9781963108064",
+    "genres": [
+      "Fiction",
+      "Collection"
+    ],
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9781963108064-L.jpg?default=false",
+    "publicationYear": 2025
+  },
+  {
     "title": "HHhH",
     "author": "Laurent Binet",
     "isbn": "9781250033345",
@@ -4601,6 +4622,15 @@ const BOOKS = [
     "publicationYear": 1968
   },
   {
+    "title": "Mountain View",
+    "author": "Otis West",
+    "isbn": "9781967756001",
+    "genres": [
+      "Fiction"
+    ],
+    "coverUrl": "https://images-us.bookshop.org/ingram/9781967756001.jpg"
+  },
+  {
     "title": "Mouthful of Birds",
     "author": "Samanta Schweblin",
     "additionalAuthors": "Megan McDowell",
@@ -4684,6 +4714,17 @@ const BOOKS = [
     ],
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9780375706851-L.jpg?default=false",
     "publicationYear": 2002
+  },
+  {
+    "title": "Myth",
+    "author": "Robert E. Segal",
+    "isbn": "9780198724704",
+    "genres": [
+      "Nonfiction",
+      "Philosophy"
+    ],
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780198724704-L.jpg?default=false",
+    "publicationYear": 2015
   },
   {
     "title": "Myth and Meaning: Cracking the Code of Culture",
@@ -5780,6 +5821,16 @@ const BOOKS = [
       "Japanese miniaturism"
     ],
     "coverUrl": "https://images-us.bookshop.org/ingram/9781250375988.jpg"
+  },
+  {
+    "title": "Saguaro",
+    "author": "Carson Mell",
+    "isbn": "9780615208350",
+    "genres": [
+      "Fiction"
+    ],
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780615208350-L.jpg?default=false",
+    "publicationYear": 2006
   },
   {
     "title": "Same Bed Different Dreams",
